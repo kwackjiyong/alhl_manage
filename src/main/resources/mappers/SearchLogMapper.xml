@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- [DB연결 사용법] 1. SQL문 작성 하고 다음과 같은 양식으로 만들어준다. -->
+<!-- sql문 작성 -->
+<mapper namespace="searchLogMapper">
+	<!-- 아래부터 내가만든 -->
+	<select id="SearchLog_USER" parameterType="UserDTO" resultType="SearchLogDTO">
+		SELECT * FROM searchlog 
+		WHERE userId = #{userId}
+		order by srchId 
+		desc
+	</select>
+	
+	<select id="SearchLog_HOT" resultType="SearchLogDTO">
+		SELECT srchWord  
+		FROM searchlog 
+		group by srchWord 
+		order by COUNT(srchWord)
+		desc
+	</select>
+	
+	
+	<select id="SearchLog_1000" resultType="SearchLogDTO">
+		SELECT srchWord
+		FROM searchlog
+		group by srchWord
+		limit 1000
+	</select>
+	
+	
+	
+	
+	
+	
+	<select id="SearchLog_AGE" parameterType="UserDTO" resultType="SearchLogDTO">
+		SELECT srchWord
+		FROM searchlog
+		where userId in 
+		(SELECT userId
+		FROM USERDATA 
+		<![CDATA[
+		WHERE userBirth < #{userBirth} AND userBirth > #{creatTime}
+		]]>)
+		group by srchWord
+		order by COUNT(srchWord)
+		desc
+	</select>
+	
+	<insert id="SearchLog_INSERT" parameterType="SearchLogDTO" >
+		INSERT INTO searchlog
+		(userId,srchWord,srchTime)
+		VALUES
+		(#{userId}, #{srchWord},#{srchTime})
+	</insert>
+
+
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- [DB연결 사용법] 1. SQL문 작성 하고 다음과 같은 양식으로 만들어준다. -->
+<!-- sql문 작성 -->
+<mapper namespace="userMapper">
+	<!-- 아래부터 내가만든 -->
+	<select id="userSelectALL" resultType="UserDTO">
+		SELECT * FROM USERDATA
+	</select>
+
+	<select resultType="UserDTO" parameterType="UserDTO"
+		id="userSelectAll">SELECT * FROM USERDATA</select>
+
+	<select resultType="UserDTO" parameterType="UserDTO"
+		id="userSelectOne">SELECT * FROM USERDATA WHERE userId=#{userId}</select>
+
+	<insert id="userInsert" parameterType="UserDTO" >
+		INSERT INTO USERDATA
+		(userId,userName,userPassword,userBirth,creatTime,userGender,userEmail,userEmailHash,userEmailCertified)
+		VALUES
+		(#{userId}, #{userName},
+		#{userPassword},#{userBirth},#{creatTime},#{userGender},#{userEmail},#{userEmailHash},#{userEmailCertified})
+	</insert>
+
+	<update id="userModify" parameterType="UserDTO">
+		UPDATE USERDATA SET
+		userPassword=#{userPassword},userEmail=#{userEmail}
+		WHERE userId=#{userId}
+	</update>
+	
+	<update id="userEmailCheck" parameterType="UserDTO">
+		UPDATE USERDATA SET
+		userEmailCertified=1
+		WHERE userId=#{userId}
+	</update>
+	
+	<update id="userUpdate_Cash" parameterType="UserDTO">
+		UPDATE USERDATA SET
+		cash=#{cash}
+		WHERE userId=#{userId}
+	</update>
+	<delete id="userDelete" parameterType="UserDTO">
+		DELETE FROM USERDATA
+		WHERE userId=#{userId}
+	</delete>
+
+
+</mapper>

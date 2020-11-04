@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- [DB연결 사용법] 1. SQL문 작성 하고 다음과 같은 양식으로 만들어준다. -->
+<!-- sql문 작성 -->
+<mapper namespace="commentMapper">
+
+	<insert id="cInsert" parameterType ="CommentDTO">
+		<!-- 댓글을 추가 -->
+		INSERT INTO comment 
+		(postId, rContent,userId,userName,reg_date,upreg_date)
+		VALUES(#{postId},#{rContent},#{userId},#{userName},#{reg_date},#{upreg_date})
+
+	</insert>
+
+
+	<select id="listReply" resultType="CommentDTO">
+		<!-- 댓글의 작성자와 회원의 아이디가 같고, 글번호가 같을 경우에 댓글 리스트를 내림차순으로 검색함 -->
+		select cId, c.postId, c.userId, c.reg_date, c.rContent
+		from comment c
+		where c.postId = #{postId}
+		order by cId
+	</select>
+
+
+	<update id="cUpdate" parameterType ="CommentDTO">
+		<!-- 댓글의 번호와 회원의 아이디가 모두다 같을경우에만 수정할 수 있도록 쿼리를 설정 -->
+		UPDATE COMMENT SET 
+		rContent=#{rContent} where cId=#{cId}
+	</update>
+
+	<delete id="cDelete">
+		<!-- 댓글의 번호가 같을 경우에 삭제할 수 있도록 설정 (아이디는 앞에서 같지않으면 버튼조차 뜨지 않기때문에 따로 쿼리를 추가할 
+			필요 없다.) -->
+		delete from comment where cId=#{cId}
+	</delete>
+
+</mapper>

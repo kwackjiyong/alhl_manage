@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- [DB연결 사용법] 1. SQL문 작성 하고 다음과 같은 양식으로 만들어준다. -->
+<!-- sql문 작성 -->
+<mapper namespace="queMapper">
+	
+	<!-- 모든 문의 정보 목록 -->
+	<select id="question_info_ALL" resultType="QuestionDTO">
+		SELECT * FROM question
+	</select>
+	
+	<!-- 사용자의 문의 정보 목록 -->
+	<select id="question_info_user" parameterType="UserDTO" resultType="QuestionDTO">
+		SELECT * FROM question WHERE userId = #{userId}
+	</select>
+	
+	<!-- 문의 정보 -->
+	<select id="question_info_one" parameterType="QuestionDTO" resultType="QuestionDTO">
+		SELECT * FROM question WHERE queId = #{queId}
+	</select>
+	
+	<!-- 문의 요청 -->
+	<insert id="question_insert_user" parameterType="QuestionDTO">
+		INSERT INTO question
+		(userId,queTitle,queContents,queTime)
+		VALUES
+		(#{userId}, #{queTitle},#{queContents},#{queTime})
+	</insert>
+	
+	<!-- 문의 답변 달기-->
+	<update id="question_update_Answer" parameterType="QuestionDTO">
+		UPDATE question 
+		SET queAnswer=#{queAnswer}
+		WHERE queId = #{queId}
+	</update>
+	
+	<!-- 문의내역 삭제 -->
+	<delete id="question_delete_request" parameterType="QuestionDTO">
+		DELETE FROM question
+		WHERE queId = #{queId}
+	</delete>
+	
+	
+</mapper>

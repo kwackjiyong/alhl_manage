@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- [DB연결 사용법] 1. SQL문 작성 하고 다음과 같은 양식으로 만들어준다. -->
+<!-- sql문 작성 -->
+<mapper namespace="noticeMapper">
+
+	<!-- 게시판 전체 불러옴 -->
+	<select id = "SelectAll" resultType="NoticeDTO">
+		SELECT postId,userId,title,contents,viewcnt,(SELECT sContents FROM SERVICEID WHERE sId = ps.serviceId) as sContents,creatTime FROM POST as ps
+	</select>
+	
+	<!-- 게시판 하나 불러옴 상세보기 -->
+	<select id = "noticeSelectOne" resultType="NoticeDTO" parameterType ="NoticeDTO">
+		SELECT * FROM POST where postId=#{postId}
+	</select>
+	
+	<!-- 글작성 -->
+	<insert parameterType ="NoticeDTO" id="noticeCreate">
+		INSERT INTO POST
+		(postId,userId,title,contents,viewcnt,serviceId,creatTime)
+		VALUES
+		(#{postId}, #{userId}, #{title}, #{contents}, #{viewcnt}, #{serviceId}, #{creatTime}) 
+	</insert>
+	
+	<!-- 글수정 -->
+	<update parameterType = "NoticeDTO" id="noticeUpdate">
+		UPDATE POST SET
+		title=#{title},contents=#{contents},serviceId=#{serviceId}
+		WHERE postId=#{postId}
+	</update>
+	
+	<!-- 글삭제 -->
+	<insert id="noticeDelete">
+		DELETE FROM POST
+		WHERE POSTID=#{POSTID}
+	</insert>
+	
+	<!-- 조회수 증가처리 -->
+	<update id="increaseViewcnt" parameterType = "NoticeDTO">
+		UPDATE POST SET
+		VIEWCNT = VIEWCNT+1
+		WHERE postId=#{postId}
+	</update>
+	
+	
+</mapper>
