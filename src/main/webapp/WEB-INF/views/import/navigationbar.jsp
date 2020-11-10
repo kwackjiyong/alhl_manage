@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <nav class="navbar header-navbar pcoded-header iscollapsed"
 	header-theme="theme1" pcoded-header-position="fixed">
 	<div class="navbar-wrapper">
@@ -8,7 +12,7 @@
 			</a> <a class="mobile-search morphsearch-search" href="#"> <i
 				class="ti-search"></i>
 			</a> <a href="index.html"> <img class="img-fluid"
-				src="assets/images/logo.png" alt="Theme-Logo">
+				src="<c:url value='resources/images/logo2.png'/>" alt="Theme-Logo">
 			</a> <a class="mobile-options"> <i class="ti-more"></i>
 			</a>
 		</div>
@@ -26,49 +30,9 @@
 				</a></li>
 			</ul>
 			<ul class="nav-right">
-				<li class="header-notification"><a href="#!"> <i
-						class="ti-bell"></i> <span class="badge bg-c-pink"></span>
-				</a>
-					<ul class="show-notification">
-						<li>
-							<h6>Notifications</h6> <label class="label label-danger">New</label>
-						</li>
-						<li>
-							<div class="media">
-								
-								<div class="media-body">
-									<h5 class="notification-user">John Doe</h5>
-									<p class="notification-msg">Lorem ipsum dolor sit amet,
-										consectetuer elit.</p>
-									<span class="notification-time">30 minutes ago</span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="media">
-								
-								<div class="media-body">
-									<h5 class="notification-user">Joseph William</h5>
-									<p class="notification-msg">Lorem ipsum dolor sit amet,
-										consectetuer elit.</p>
-									<span class="notification-time">30 minutes ago</span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="media">
-							
-								<div class="media-body">
-									<h5 class="notification-user">Sara Soudein</h5>
-									<p class="notification-msg">Lorem ipsum dolor sit amet,
-										consectetuer elit.</p>
-									<span class="notification-time">30 minutes ago</span>
-								</div>
-							</div>
-						</li>
-					</ul></li>
+				
 				<li class="user-profile header-notification"><a href="#!">
-						 <span>John Doe</span> <i
+						 <span>kwack ji yong</span> <i
 						class="ti-angle-down"></i>
 				</a>
 					<ul class="show-notification profile-notification">
