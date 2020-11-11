@@ -68,28 +68,13 @@
 								<div class="page-wrapper">
 									<div class="page-header card">
                                         <div class="row align-items-end">
-                                            <div class="col-lg-8">
+                                            <div class="col-lg-12">
                                                 <div class="page-header-title">
-                                                    <i class="icofont icofont-layout bg-c-blue"></i>
+                                                    <i class="icofont icofont-chart-bar-graph bg-c-yellow"></i>
                                                     <div class="d-inline">
                                                         <h4>매출/통계</h4>
                                                         <span>통계와 내역을 확인 할 수 있습니다.</span>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="page-header-breadcrumb">
-                                                    <ul class="breadcrumb-title">
-                                                        <li class="breadcrumb-item">
-                                                            <a href="index.html">
-                                                                <i class="icofont icofont-home"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="breadcrumb-item"><a href="#!">Basic Components</a>
-                                                        </li>
-                                                        <li class="breadcrumb-item"><a href="#!">Accordion</a>
-                                                        </li>
-                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -241,12 +226,6 @@
                                             </div>
                                         </div>
                                         
-										<div class="row">
-											
-                                            
-											
-											
-										</div>
 									</div>
 								</div>
 							</div>
