@@ -12,5 +12,15 @@ public class UserController {
 		return "user/loginPage";
 	}
 	
+	@RequestMapping(value = "manage_user.do")
+	public String manage_user() {
+		
+		return "user/main";
+	}
 	
+	@RequestMapping(value = "user_Find.do")
+	public String user_Find() {
+		
+		return "user/userFind";
+	}
 }

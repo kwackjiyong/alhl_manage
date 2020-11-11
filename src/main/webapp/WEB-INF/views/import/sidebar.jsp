@@ -31,10 +31,28 @@
 			</div>
 		</div>
 		<ul class="pcoded-item pcoded-left-item">
-			<li><a href="form-elements-component.html"> <span
-					class="pcoded-micon"><i class="ti-user"></i></span> <span
-					class="pcoded-mtext" data-i18n="nav.form-components.main">사용자 관리</span> <span class="pcoded-mcaret"></span>
-			</a></li>
+		 <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-user"></i></span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">사용자 관리</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="manage_user.do">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">사용자 리스트</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="user_Find.do">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">사용자 조회</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        </ul>
 			<li><a href="form-elements-component.html"> <span
 					class="pcoded-micon"><i class="ti-shopping-cart"></i></span> <span
 					class="pcoded-mtext" data-i18n="nav.form-components.main">상품 관리</span> <span class="pcoded-mcaret"></span>
