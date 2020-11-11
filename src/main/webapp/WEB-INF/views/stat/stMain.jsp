@@ -66,21 +66,46 @@
 						<div class="pcoded-inner-content">
 							<div class="main-body">
 								<div class="page-wrapper">
-									
+									<div class="page-header card">
+                                        <div class="row align-items-end">
+                                            <div class="col-lg-8">
+                                                <div class="page-header-title">
+                                                    <i class="icofont icofont-layout bg-c-blue"></i>
+                                                    <div class="d-inline">
+                                                        <h4>매출/통계</h4>
+                                                        <span>통계와 내역을 확인 할 수 있습니다.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="page-header-breadcrumb">
+                                                    <ul class="breadcrumb-title">
+                                                        <li class="breadcrumb-item">
+                                                            <a href="index.html">
+                                                                <i class="icofont icofont-home"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li class="breadcrumb-item"><a href="#!">Basic Components</a>
+                                                        </li>
+                                                        <li class="breadcrumb-item"><a href="#!">Accordion</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 									<!-- Page-header end -->
 
 									<div class="page-body">
-									
+										
 										<div class="row">
-                                            <div class="col-sm-12">
+											
+											<div class="col-sm-12">
                                                 <!-- Tab variant tab card start -->
                                                 <div class="card">
                                                     <div class="card-block tab-icon">
-                                                        <!-- Row start -->
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <!-- <h6 class="sub-title">Tab With Icon</h6> -->
-                                                                <div class="sub-title">매출/통계</div>
                                                                 <!-- Nav tabs -->
                                                                 <ul class="nav nav-tabs md-tabs " role="tablist">
                                                                     <li class="nav-item">
@@ -121,7 +146,8 @@
 											                                                    <thead>
 											                                                        <tr>
 											                                                            <th>#</th>
-											                                                            <th>이용권명</th>
+											                                                            <th>상품번호</th>
+											                                                            <th>상품명</th>
 											                                                            <th>정상가</th>
 											                                                            <th>할인율</th>
 											                                                            <th>결제액</th>
@@ -132,8 +158,9 @@
 											                                                    <tbody>
 											                                                        <tr>
 											                                                            <th scope="row">1</th>
+											                                                            <th>3</th>
 											                                                            <td>꿀곰이</td>
-											                                                            <td>1000</td>
+											                                                            <td>2000</td>
 											                                                            <td>10</td>
 											                                                            <td>900</td>
 											                                                            <td>rhkrwldyd</td>
@@ -141,7 +168,8 @@
 											                                                        </tr>
 											                                                        <tr>
 											                                                            <th scope="row">2</th>
-											                                                            <td>꿀곰이</td>
+											                                                            <th>2</th>
+											                                                            <td>곰곰이</td>
 											                                                            <td>1000</td>
 											                                                            <td>10</td>
 											                                                            <td>900</td>
@@ -150,8 +178,9 @@
 											                                                        </tr>
 											                                                        <tr>
 											                                                            <th scope="row">3</th>
+											                                                            <th>3</th>
 											                                                            <td>꿀곰이</td>
-											                                                            <td>1000</td>
+											                                                            <td>2000</td>
 											                                                            <td>10</td>
 											                                                            <td>900</td>
 											                                                            <td>rhkrwldyd</td>
@@ -159,8 +188,9 @@
 											                                                        </tr>
 											                                                        <tr>
 											                                                            <th scope="row">4</th>
+											                                                            <th>3</th>
 											                                                            <td>꿀곰이</td>
-											                                                            <td>1000</td>
+											                                                            <td>2000</td>
 											                                                            <td>10</td>
 											                                                            <td>900</td>
 											                                                            <td>rhkrwldyd</td>
@@ -168,8 +198,9 @@
 											                                                        </tr>
 											                                                        <tr>
 											                                                            <th scope="row">5</th>
-											                                                            <td>꿀곰이</td>
-											                                                            <td>1000</td>
+											                                                            <th>4</th>
+											                                                            <td>불곰이</td>
+											                                                            <td>5000</td>
 											                                                            <td>10</td>
 											                                                            <td>900</td>
 											                                                            <td>rhkrwldyd</td>
