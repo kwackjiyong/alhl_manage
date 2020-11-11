@@ -4,13 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class UserController {
+public class EventController {
 
-	@RequestMapping(value = "loginPage.do")
-	public String LoginPage() {
+	@RequestMapping(value = "event_main.do")
+	public String eventPage() {
 		
-		return "user/loginPage";
+		return "event/main";
 	}
-	
-	
 }

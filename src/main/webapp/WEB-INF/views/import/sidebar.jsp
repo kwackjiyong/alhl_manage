@@ -39,7 +39,7 @@
 					class="pcoded-micon"><i class="ti-shopping-cart"></i></span> <span
 					class="pcoded-mtext" data-i18n="nav.form-components.main">상품 관리</span> <span class="pcoded-mcaret"></span>
 			</a></li>
-			<li><a href="form-elements-component.html"> <span
+			<li><a href="event_main.do"> <span
 					class="pcoded-micon"><i class="ti-star"></i></span> <span
 					class="pcoded-mtext" data-i18n="nav.form-components.main">이벤트 관리</span> <span class="pcoded-mcaret"></span>
 			</a></li>
