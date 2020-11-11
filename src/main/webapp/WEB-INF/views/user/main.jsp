@@ -58,8 +58,8 @@
 														</div>
 														<div class="card-header-right">
 															<select name="cars" id="cars" class="form-control">
-																<option value="volvo">횟수혜택</option>
-																<option value="saab">할인 %</option>
+																<option value="volvo">20개 보기</option>
+																<option value="saab">50개 보기</option>
 															</select>
 														</div>
 													</div>
@@ -79,7 +79,6 @@
 																		</tr>
 																	</thead>
 																	<tbody>
-																		<%-- <c:forEach> --%>
 																		<tr id = "btnRow">
 																			<th scope="row">1</th>
 																			<td>1</td>
@@ -89,22 +88,7 @@
 																			<td>@5</td>
 																			<td>@6</td>
 																		</tr>
-																		<%-- 	</c:forEach> --%>
-
-																		<%-- 	<c:forEach items="${list}" var="list">
-													<tr>
-														<td>${list.queId}</td>
-														<td><a href="#" onclick="javascript:location.href='question_info.do?queId=${list.queId}'" >${list.queTitle}</td>
-														<td>${list.userId}</td>
-														<td>${list.queTime}</td>
-														<c:if test="${null != list.queAnswer}">
-															<td style="color:green;">응답됨</td>
-														</c:if>
-														<c:if test="${null == list.queAnswer}">
-															<td style="color:red;">대기중</td>
-														</c:if>
-													</tr>
-												</c:forEach> --%>
+																		
 																	</tbody>
 																</table>
 															</div>

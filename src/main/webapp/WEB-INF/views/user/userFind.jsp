@@ -37,10 +37,10 @@
 											<div class="col-md-6">
 												<div class="card fb-card">
 													<div class="card-header">
-														<i class="icofont icofont-social-facebook"></i>
+														<i class="ti-user"></i>
 														<div class="d-inline-block">
-															<h5>고객정보</h5>
-															<span>blog page timeline</span>
+															<h5>이용권 정보</h5>
+															<span>고객 이용권 정보입니다.</span>
 														</div>
 													</div>
 													<div class="card-block text-center">
@@ -56,110 +56,58 @@
 															<div class="col-4 b-r-default">
 																<h4 class="sub-title">사용 중인 이용권</h4>
 																<div class="form-group row">
-																	<div class="col-sm-3">
-																		<input type="text"
-																			class="form-control form-control-lg"
-																			placeholder=".form-control-lg">
-																	</div>
-																</div>
-																<div class="col-sm-8">
-																	<select name="cars" id="cars" class="form-control">
-																		<option value="volvo">횟수혜택</option>
-																		<option value="saab">할인 %</option>
-																	</select>
-																</div>
-															</div>
-															<div class="col-4">
-																<h4 class="sub-title">남은 기간</h4>
-																<div class="form-group row">
-																	<div class="col-sm-3">
-																		<input type="text"
-																			class="form-control form-control-lg"
-																			placeholder=".form-control-lg">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10">
-																		<input type="text" class="form-control"
-																			placeholder=".form-control">
+																	<div class="col-lg-12">
+																		<label>애곰이</label>
 																	</div>
 																</div>
 																<div class="form-group row">
 																	<div class="col-sm-8">
-																		<input type="text"
-																			class="form-control form-control-sm"
-																			placeholder=".form-control-sm">
+																		<select name="cars" id="cars" class="form-control">
+																			<option value="1">애곰이</option>
+																			<option value="2">곰곰이</option>
+																			<option value="3">꿀곰이</option>
+																			<option value="4">불곰이</option>
+																			
+																		</select>
+																	</div>
+																	
+																	<div class="col-sm-4">
+																		<button class="btn btn-danger btn-round btn-sm">변경</button>
+																	</div>
+																</div>
+																
+																
+															</div>
+															<div class="col-4">
+																<h4 class="sub-title">남은 기간</h4>
+																<div class="form-group row">
+																	<div class="col-lg-12">
+																		<label>2020-11-17 11:23:01 까지</label>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-8">
+																		<select name="cars" id="cars" class="form-control">
+																			<option value="1">1주일 연장</option>
+																			<option value="2">만료</option>
+																		</select>
+																	</div>
+																	
+																	<div class="col-sm-4">
+																		<button class="btn btn-danger btn-round btn-sm">변경</button>
 																	</div>
 																</div>
 															</div>
 														</div>
 
-														<button class="btn btn-danger btn-round">중지</button>
+														
 													</div>
 												</div>
 											</div>
-
-											<div class="col-md-6">
-												<div class="card dribble-card">
-													<div class="card-header">
-														<i class="icofont icofont-social-dribbble"></i>
-														<div class="d-inline-block">
-															<h5>구매내역</h5>
-															<span>회원님의 구매내역 입니다.</span>
-														</div>
-													</div>
-													<div class="card-block text-center">
-														<div class="card-block table-border-style">
-															<div class="table-responsive">
-																<table class="table table-hover">
-																	<thead>
-																		<tr>
-																			<th>#</th>
-																			<th>사용자id</th>
-																			<th>결제액</th>
-																			<th>구매이용권</th>
-																			<th>날짜</th>
-																		</tr>
-																	</thead>
-																	<tbody>
-																		<%-- <c:forEach> --%>
-																		<tr data-toggle="modal" data-target="#btnRow">
-																			<th scope="row">1</th>
-																			<td>1</td>
-																			<td>2</td>
-																			<td>@3</td>
-																			<td>@4</td>
-																		</tr>
-																		<%-- 	</c:forEach> --%>
-
-																		<%-- 	<c:forEach items="${list}" var="list">
-													<tr>
-														<td>${list.queId}</td>
-														<td><a href="#" onclick="javascript:location.href='question_info.do?queId=${list.queId}'" >${list.queTitle}</td>
-														<td>${list.userId}</td>
-														<td>${list.queTime}</td>
-														<c:if test="${null != list.queAnswer}">
-															<td style="color:green;">응답됨</td>
-														</c:if>
-														<c:if test="${null == list.queAnswer}">
-															<td style="color:red;">대기중</td>
-														</c:if>
-													</tr>
-												</c:forEach> --%>
-																	</tbody>
-																</table>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="row">
 											<div class="col-md-6">
 												<div class="card twitter-card">
 													<div class="card-header">
-														<i class="icofont icofont-social-twitter"></i>
+														<i class="ti-write"></i>
 														<div class="d-inline-block">
 															<h5>비고란</h5>
 															<span>회원님의 비고란을 입력하세요.</span>
@@ -179,10 +127,10 @@
 																		<tbody>
 																			<tr>
 																				<td>
-																					<h3>서비스 엉망</h3>
+																					<span>단순변심 환불 1회</span>
 																				</td>
 																				<td>
-																					<p class="d-inline-block m-r-20">4 : 36</p>
+																					<p class="d-inline-block m-r-20">2020-11-11 01:26</p>
 																					<div class="progress d-inline-block"></div>
 																				</td>
 																			</tr>
@@ -192,8 +140,78 @@
 																</div>
 															</div>
 															<div class="col-6">
-																<textarea rows="10" cols="10" class="form-control"></textarea>
-																<button class="btn btn-danger btn-round">중지</button>
+																<textarea rows="6" cols="10" class="form-control"></textarea>
+																<button class="btn btn-success btn-round">입력</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+
+										<div class="row">
+											<div class="col-md-12">
+												<div class="card dribble-card">
+													<div class="card-header">
+														<i class="ti-money"></i>
+														<div class="d-inline-block">
+															<h5>구매내역</h5>
+															<span>회원님의 구매내역 입니다.</span>
+														</div>
+													</div>
+													<div class="card-block text-center">
+														<div class="card-block table-border-style">
+															<div class="table-responsive">
+																<table class="table table-hover">
+																	<thead>
+																		<tr>
+																			<th>#</th>
+																			<th>사용자id</th>
+																			<th>결제액</th>
+																			<th>구매이용권</th>
+																			<th>날짜</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<th scope="row">1</th>
+																			<td>rhkrwldyd</td>
+																			<td>2155</td>
+																			<td>불곰이</td>
+																			<td>20/06/27</td>
+																		</tr>
+																		<tr>
+																			<th scope="row">2</th>
+																			<td>rhkrwldyd</td>
+																			<td>2155</td>
+																			<td>불곰이</td>
+																			<td>20/06/27</td>
+																		</tr>
+																		<tr>
+																			<th scope="row">3</th>
+																			<td>rhkrwldyd</td>
+																			<td>2155</td>
+																			<td>불곰이</td>
+																			<td>20/06/27</td>
+																		</tr>
+																		<tr>
+																			<th scope="row">4</th>
+																			<td>rhkrwldyd</td>
+																			<td>2155</td>
+																			<td>불곰이</td>
+																			<td>20/06/27</td>
+																		</tr>
+																		<tr>
+																			<th scope="row">5</th>
+																			<td>rhkrwldyd</td>
+																			<td>2155</td>
+																			<td>불곰이</td>
+																			<td>20/06/27</td>
+																		</tr>
+																		
+																	</tbody>
+																</table>
 															</div>
 														</div>
 													</div>
