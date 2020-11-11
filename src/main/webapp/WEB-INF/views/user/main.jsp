@@ -7,7 +7,8 @@
 <title>올룩꿀룩 관리자 페이지</title>
 <!------------ css 임포트 ------------>
 <c:import url="../import/css.jsp" />
-<!------------ CSS END -------------->
+<!------------ CSS END -------------->		
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 
 <body>
@@ -79,7 +80,7 @@
 																	</thead>
 																	<tbody>
 																		<%-- <c:forEach> --%>
-																		<tr data-toggle="modal" data-target="#btnRow">
+																		<tr id = "btnRow">
 																			<th scope="row">1</th>
 																			<td>1</td>
 																			<td>2</td>
@@ -125,107 +126,17 @@
 		</div>
 	</div>
 
-	<!-------------------- Modal -------------------->
-	<div class="modal fade" id="btnEventAdd" tabindex="-1"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">이벤트 추가</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">이벤트 종류</label>
-						<div class="col-sm-8">
-							<select name="cars" id="cars" class="form-control">
-								<option value="volvo">횟수혜택</option>
-								<option value="saab">할인 %</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">수량</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">이벤트 시작</label>
-						<div class="col-sm-8">
-							<input type="date" class="form-control">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">이벤트 종료</label>
-						<div class="col-sm-8">
-							<input type="date" class="form-control">
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-warning" data-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-success">추가</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="btnRow" tabindex="-1"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">이벤트 수정</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">이벤트 수정</label>
-						<div class="col-sm-8">
-							<select name="cars" id="cars" class="form-control">
-								<option value="volvo">횟수혜택</option>
-								<option value="saab">할인 %</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">수량</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">이벤트 시작</label>
-						<div class="col-sm-8">
-							<input type="date" class="form-control">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">이벤트 종료</label>
-						<div class="col-sm-8">
-							<input type="date" class="form-control">
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-warning" data-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-success">추가</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-------------------- 모달 END -------------------->
+	<script>
+	$(document).ready(function() {
+		$("#btnRow").click(function() {
+			location.href = "user_Find.do";
+		});
+	})
+	</script>
 
 	<!------------ 자바스크립트 임포트 ------------>
 	<c:import url="../import/javascript.jsp" />
+
 	<!------------ Javascript import END ------------>
 </body>
 </html>

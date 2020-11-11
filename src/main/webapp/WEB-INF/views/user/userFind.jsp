@@ -32,101 +32,83 @@
 							<div class="main-body">
 								<div class="page-wrapper">
 									<div class="page-body">
-										<div class="card fb-card">
-											<div class="card-header">
-												<i class="icofont icofont-social-facebook"></i>
-												<div class="d-inline-block">
-													<h5>고객조회</h5>
-													<span>blog page timeline</span>
-												</div>
-											</div>
-											<div class="card-block text-center">
-											<div class = "row">
-												<div class="col-4 b-r-default">
-													<h4 class="sub-title">사용자</h4>
-														<div class="form-group row">
-															<div class="col-sm-3">
-																<input type="text" class="form-control form-control-lg"
-																	placeholder=".form-control-lg">
-															</div>
-														</div>
-														<div class="form-group row">
-															<div class="col-sm-10">
-																<input type="text" class="form-control"
-																	placeholder=".form-control">
-															</div>
-														</div>
-														<div class="form-group row">
-															<div class="col-sm-8">
-																<input type="text" class="form-control form-control-sm"
-																	placeholder=".form-control-sm">
-															</div>
-														</div>
-												</div>
-												<div class="col-4 b-r-default">
-													<h4 class="sub-title">사용 중인 이용권</h4>
-														<div class="form-group row">
-															<div class="col-sm-3">
-																<input type="text" class="form-control form-control-lg"
-																	placeholder=".form-control-lg">
-															</div>
-														</div>
-														<div class="form-group row">
-															<div class="col-sm-10">
-																<input type="text" class="form-control"
-																	placeholder=".form-control">
-															</div>
-														</div>
-														<div class="form-group row">
-															<div class="col-sm-8">
-																<input type="text" class="form-control form-control-sm"
-																	placeholder=".form-control-sm">
-															</div>
-														</div>
-												</div>
-												<div class="col-4 b-r-default">
-													<h4 class="sub-title">남은 기간</h4>
-														<div class="form-group row">
-															<div class="col-sm-3">
-																<input type="text" class="form-control form-control-lg"
-																	placeholder=".form-control-lg">
-															</div>
-														</div>
-														<div class="form-group row">
-															<div class="col-sm-10">
-																<input type="text" class="form-control"
-																	placeholder=".form-control">
-															</div>
-														</div>
-														<div class="form-group row">
-															<div class="col-sm-8">
-																<input type="text" class="form-control form-control-sm"
-																	placeholder=".form-control-sm">
-															</div>
-														</div>
-												</div>
-											</div>
-											</div>
-										</div>
-									</div>
 
-									<!-- Page body start -->
-									<div class="page-body">
 										<div class="row">
-											<div class="col-md-12">
-												<div class="card add-task-card">
+											<div class="col-md-6">
+												<div class="card fb-card">
 													<div class="card-header">
-														<div class="card-header-left">
-															<h5>사용자 조회</h5>
-														</div>
-														<div class="card-header-right">
-															<select name="cars" id="cars" class="form-control">
-																<option value="volvo">횟수혜택</option>
-																<option value="saab">할인 %</option>
-															</select>
+														<i class="icofont icofont-social-facebook"></i>
+														<div class="d-inline-block">
+															<h5>고객정보</h5>
+															<span>blog page timeline</span>
 														</div>
 													</div>
-													<div class="card-block">
+													<div class="card-block text-center">
+														<div class="row">
+															<div class="col-4 b-r-default">
+																<h4 class="sub-title">사용자</h4>
+																<div class="form-group row">
+																	<div class="col-sm-10">
+																		<label class="form-label">곽지용</label>
+																	</div>
+																</div>
+															</div>
+															<div class="col-4 b-r-default">
+																<h4 class="sub-title">사용 중인 이용권</h4>
+																<div class="form-group row">
+																	<div class="col-sm-3">
+																		<input type="text"
+																			class="form-control form-control-lg"
+																			placeholder=".form-control-lg">
+																	</div>
+																</div>
+																<div class="col-sm-8">
+																	<select name="cars" id="cars" class="form-control">
+																		<option value="volvo">횟수혜택</option>
+																		<option value="saab">할인 %</option>
+																	</select>
+																</div>
+															</div>
+															<div class="col-4">
+																<h4 class="sub-title">남은 기간</h4>
+																<div class="form-group row">
+																	<div class="col-sm-3">
+																		<input type="text"
+																			class="form-control form-control-lg"
+																			placeholder=".form-control-lg">
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10">
+																		<input type="text" class="form-control"
+																			placeholder=".form-control">
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-8">
+																		<input type="text"
+																			class="form-control form-control-sm"
+																			placeholder=".form-control-sm">
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<button class="btn btn-danger btn-round">중지</button>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-md-6">
+												<div class="card dribble-card">
+													<div class="card-header">
+														<i class="icofont icofont-social-dribbble"></i>
+														<div class="d-inline-block">
+															<h5>구매내역</h5>
+															<span>회원님의 구매내역 입니다.</span>
+														</div>
+													</div>
+													<div class="card-block text-center">
 														<div class="card-block table-border-style">
 															<div class="table-responsive">
 																<table class="table table-hover">
@@ -172,12 +154,57 @@
 												</div>
 											</div>
 										</div>
+
+										<div class="row">
+											<div class="col-md-6">
+												<div class="card twitter-card">
+													<div class="card-header">
+														<i class="icofont icofont-social-twitter"></i>
+														<div class="d-inline-block">
+															<h5>비고란</h5>
+															<span>회원님의 비고란을 입력하세요.</span>
+														</div>
+													</div>
+													<div class="card-block text-center">
+														<div class="row">
+															<div class="col-6 b-r-default">
+																<div class="table-responsive">
+																	<table class="table table-hover">
+																		<thead>
+																			<tr>
+																				<th>내용</th>
+																				<th>날짜</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td>
+																					<h3>서비스 엉망</h3>
+																				</td>
+																				<td>
+																					<p class="d-inline-block m-r-20">4 : 36</p>
+																					<div class="progress d-inline-block"></div>
+																				</td>
+																			</tr>
+
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+															<div class="col-6">
+																<textarea rows="10" cols="10" class="form-control"></textarea>
+																<button class="btn btn-danger btn-round">중지</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
-									<!-- Page body end -->
+
 								</div>
 							</div>
 							<!-- Main-body end -->
-							<div id="styleSelector"></div>
 						</div>
 					</div>
 				</div>
