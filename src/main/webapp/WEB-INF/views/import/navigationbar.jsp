@@ -11,7 +11,7 @@
 				class="ti-menu"></i>
 			</a> <a class="mobile-search morphsearch-search" href="#"> <i
 				class="ti-search"></i>
-			</a> <a href="index.html"> <img class="img-fluid"
+			</a> <a href="index.do"> <img class="img-fluid"
 				src="<c:url value='resources/images/logo2.png'/>" alt="Theme-Logo">
 			</a> <a class="mobile-options"> <i class="ti-more"></i>
 			</a>

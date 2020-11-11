@@ -28,4 +28,10 @@ public class ProductController {
 		return "product/pdMain";
 	}
 	
+	@RequestMapping(value = "product_info.do", method = RequestMethod.GET)
+	public String product_info(Locale locale, Model model) {
+		
+		return "product/pdInfo";
+	}
+	
 }

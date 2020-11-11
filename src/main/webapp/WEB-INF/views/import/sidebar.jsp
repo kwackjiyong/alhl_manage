@@ -53,7 +53,7 @@
                                             </a>
                                         </li>
                                         </ul>
-			<li><a href="form-elements-component.html"> <span
+			<li><a href="product_main.do"> <span
 					class="pcoded-micon"><i class="ti-shopping-cart"></i></span> <span
 					class="pcoded-mtext" data-i18n="nav.form-components.main">상품 관리</span> <span class="pcoded-mcaret"></span>
 			</a></li>
@@ -61,7 +61,7 @@
 					class="pcoded-micon"><i class="ti-star"></i></span> <span
 					class="pcoded-mtext" data-i18n="nav.form-components.main">이벤트 관리</span> <span class="pcoded-mcaret"></span>
 			</a></li>
-			<li><a href="bs-basic-table.html"> <span
+			<li><a href="stat_main.do"> <span
 					class="pcoded-micon"><i class="ti-bar-chart"></i></span> <span
 					class="pcoded-mtext" data-i18n="nav.form-components.main">매출/통계</span> <span class="pcoded-mcaret"></span>
 			</a></li>

@@ -90,7 +90,7 @@
 															<h5>상품 목록</h5>
 														</div>
 														<div class="card-header-right">
-															<button type="button" class="btn btn-primary"
+															<button type="button" class="btn btn-primary btn-sm"
 																data-toggle="modal" data-target="#btnProductAdd">
 																상품 추가</button>
 														</div>
@@ -111,32 +111,43 @@
 																		</tr>
 																	</thead>
 																	<tbody>
-																		<%-- <c:forEach> --%>
-																		<tr data-toggle="modal" data-target="#btnRow">
+																		<tr>
 																			<td scope="row">1</td>
-																			<td>애곰이</td>
+																			<td href="#" onclick="javascript:location.href='product_info.do'">애곰이</td>
 																			<td>20</td>
 																			<td>0</td>
 																			<td>20/06/29</td>
-																			<td><button class="btn btn-danger btn-round">사용중지</button></td>
-																			<td><button class="btn btn-warning btn-round">수정</button></td>
+																			<td><button class="btn btn-danger btn-round btn-sm">사용중지</button></td>
+																			<td><button class="btn btn-warning btn-round btn-sm" data-toggle="modal" data-target="#btnProductEdit">수정</button></td>
 																		</tr>
-																		<%-- 	</c:forEach> --%>
-
-																		<%-- 	<c:forEach items="${list}" var="list">
-													<tr>
-														<td>${list.queId}</td>
-														<td><a href="#" onclick="javascript:location.href='question_info.do?queId=${list.queId}'" >${list.queTitle}</td>
-														<td>${list.userId}</td>
-														<td>${list.queTime}</td>
-														<c:if test="${null != list.queAnswer}">
-															<td style="color:green;">응답됨</td>
-														</c:if>
-														<c:if test="${null == list.queAnswer}">
-															<td style="color:red;">대기중</td>
-														</c:if>
-													</tr>
-												</c:forEach> --%>
+																		<tr>
+																			<td scope="row">2</td>
+																			<td href="#" onclick="javascript:location.href='product_info.do'">곰곰이</td>
+																			<td>300</td>
+																			<td>1000</td>
+																			<td>20/06/29</td>
+																			<td><button class="btn btn-danger btn-round btn-sm">사용중지</button></td>
+																			<td><button class="btn btn-warning btn-round btn-sm" data-toggle="modal" data-target="#btnProductEdit">수정</button></td>
+																		</tr>
+																		<tr>
+																			<td scope="row">3</td>
+																			<td href="#" onclick="javascript:location.href='product_info.do'">꿀곰이</td>
+																			<td>1000</td>
+																			<td>3000</td>
+																			<td>20/06/29</td>
+																			<td><button class="btn btn-danger btn-round btn-sm">사용중지</button></td>
+																			<td><button class="btn btn-warning btn-round btn-sm" data-toggle="modal" data-target="#btnProductEdit">수정</button></td>
+																		</tr>
+																		<tr>
+																			<td scope="row">4</td>
+																			<td href="#" onclick="javascript:location.href='product_info.do'">불곰이</td>
+																			<td>9999</td>
+																			<td>5000</td>
+																			<td>20/06/29</td>
+																			<td><button class="btn btn-danger btn-round btn-sm">사용중지</button></td>
+																			<td><button class="btn btn-warning btn-round btn-sm" data-toggle="modal" data-target="#btnProductEdit">수정</button></td>
+																		</tr>
+																		
 																	</tbody>
 																</table>
 															</div>
@@ -157,6 +168,8 @@
 	</div>
 	
 	<!-------------------- Modal -------------------->
+	
+	<!-- 상품추가 모달창 -->
 	<div class="modal fade" id="btnProductAdd" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -193,6 +206,47 @@
 					<button type="button" class="btn btn-warning"
 						data-dismiss="modal">닫기</button>
 					<button type="button" class="btn btn-success">추가</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 상품수정 모달창 -->
+	<div class="modal fade" id="btnProductEdit" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">상품 수정</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label">상품명</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label">혜택</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label">가격</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-warning"
+						data-dismiss="modal">닫기</button>
+					<button type="button" class="btn btn-success">수정</button>
 				</div>
 			</div>
 		</div>
