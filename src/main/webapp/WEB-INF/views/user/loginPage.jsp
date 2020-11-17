@@ -32,7 +32,7 @@
 				<div class="col-sm-12">
 					<!-- Authentication card start -->
 					<div class="login-card card-block auth-body mr-auto ml-auto">
-						<form action = "login.ing">
+						<form action = "login.do" method="post">
 							<div class="text-center"></div>
 							<div class="auth-box">
 								<div class="row m-b-20">
@@ -66,7 +66,7 @@
 								</div>
 								<div class="row m-t-30">
 									<div class="col-md-12">
-										<button type="button" onclick="login_ing(); return false;"
+										<button type="submit"
 											class="ClickBtn btn-md btn-block waves-effect text-center m-b-20">로그인</button>
 									</div>
 								</div>
