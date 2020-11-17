@@ -5,15 +5,10 @@
 <configuration>
 <!-- [DB연결 사용법] 8. 만든 DTO와 Mapper정의하기 -->
 	<typeAliases>
-		<typeAlias type="com.manage.alhl.dao" alias="UserDTO"></typeAlias>
+		<typeAlias type="com.manage.alhl.dto.UserDTO" alias="UserDTO"></typeAlias>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mappers/UserMapper.xml" />
-		<mapper resource="mappers/SearchLogMapper.xml" />
-		<mapper resource="mappers/NoticeMapper.xml" />
-		<mapper resource="mappers/ShopMapper.xml" />
-		<mapper resource="mappers/CommentMapper.xml" />
-		<mapper resource="mappers/QuestionMapper.xml" />
 	</mappers>
 </configuration>
