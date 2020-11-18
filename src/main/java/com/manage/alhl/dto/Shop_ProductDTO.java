@@ -1,11 +1,15 @@
 package com.manage.alhl.dto;
 
+import java.sql.Timestamp;
+
 public class Shop_ProductDTO {
 	private int spId;
 	private int productNum;
 	private String productName;
 	private int benefit;
 	private int price;
+	private Timestamp createDate;
+	
 	public int getSpId() {
 		return spId;
 	}
@@ -36,4 +40,17 @@ public class Shop_ProductDTO {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	public Timestamp getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(Timestamp createDate) {
+		this.createDate = createDate;
+	}
+	@Override
+	public String toString() {
+		return "Shop_ProductDTO [spId=" + spId + ", productNum=" + productNum + ", productName=" + productName
+				+ ", benefit=" + benefit + ", price=" + price + ", createDate=" + createDate + "]";
+	}
+	
+	
 }

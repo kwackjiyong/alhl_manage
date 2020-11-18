@@ -111,43 +111,18 @@
 																		</tr>
 																	</thead>
 																	<tbody>
-																		<tr>
-																			<td scope="row">1</td>
-																			<td href="#" onclick="javascript:location.href='product_info.do'">애곰이</td>
-																			<td>20</td>
-																			<td>0</td>
-																			<td>20/06/29</td>
-																			<td><button class="btn btn-danger btn-round btn-sm">사용중지</button></td>
-																			<td><button class="btn btn-warning btn-round btn-sm" data-toggle="modal" data-target="#btnProductEdit">수정</button></td>
-																		</tr>
-																		<tr>
-																			<td scope="row">2</td>
-																			<td href="#" onclick="javascript:location.href='product_info.do'">곰곰이</td>
-																			<td>300</td>
-																			<td>1000</td>
-																			<td>20/06/29</td>
-																			<td><button class="btn btn-danger btn-round btn-sm">사용중지</button></td>
-																			<td><button class="btn btn-warning btn-round btn-sm" data-toggle="modal" data-target="#btnProductEdit">수정</button></td>
-																		</tr>
-																		<tr>
-																			<td scope="row">3</td>
-																			<td href="#" onclick="javascript:location.href='product_info.do'">꿀곰이</td>
-																			<td>1000</td>
-																			<td>3000</td>
-																			<td>20/06/29</td>
-																			<td><button class="btn btn-danger btn-round btn-sm">사용중지</button></td>
-																			<td><button class="btn btn-warning btn-round btn-sm" data-toggle="modal" data-target="#btnProductEdit">수정</button></td>
-																		</tr>
-																		<tr>
-																			<td scope="row">4</td>
-																			<td href="#" onclick="javascript:location.href='product_info.do'">불곰이</td>
-																			<td>9999</td>
-																			<td>5000</td>
-																			<td>20/06/29</td>
-																			<td><button class="btn btn-danger btn-round btn-sm">사용중지</button></td>
-																			<td><button class="btn btn-warning btn-round btn-sm" data-toggle="modal" data-target="#btnProductEdit">수정</button></td>
-																		</tr>
-																		
+																	
+																		<c:forEach items="${product_list}" var="pd_list">
+																			<tr>
+																				<td scope="row">${pd_list.spId}</td>
+																				<td>${pd_list.productName }</td>
+																				<td>${pd_list.benefit }</td>
+																				<td>${pd_list.price }</td>
+																				<td>${pd_list.createDate }</td>
+																				<td><button class="btn btn-danger btn-round btn-sm">사용중지</button></td>
+																				<td><button class="btn btn-warning btn-round btn-sm" data-toggle="modal" data-target="#btnProductEdit">수정</button></td>
+																			</tr>
+																		</c:forEach>
 																	</tbody>
 																</table>
 															</div>
@@ -224,24 +199,33 @@
 				</div>
 				<div class="modal-body">
 					
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">상품명</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">혜택</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">가격</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control">
-						</div>
-					</div>
+					
+					<form action = "update_product.ing" method = "post">
+						<c:forEach items="${product_list}" var="pd_list">
+						
+							<c:if test="">
+							<div class="form-group row">
+								<label class="col-sm-4 col-form-label">상품명</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" value = "${pd_list.productName}">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-4 col-form-label">혜택</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" value = "${pd_list.benefit}">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-4 col-form-label">가격</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" value = "${pd_list.price}">
+								</div>
+							</div>
+							</c:if>
+							
+							</c:forEach>
+					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-warning"

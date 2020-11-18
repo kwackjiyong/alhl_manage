@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- [DB연결 사용법] 1. SQL문 작성 하고 다음과 같은 양식으로 만들어준다. -->
+<!-- sql문 작성 -->
+<mapper namespace="shop_product_mapper">
+
+	<select id="SelectAll" parameterType ="Shop_ProductDTO" resultType="Shop_ProductDTO">
+		SELECT * FROM shop_product
+	</select>
+	
+	<insert id = "spInsert" parameterType="Shop_ProductDTO">
+		INSERT INTO shop_product
+		(productNum,productName,benefit,price,createDate)
+		VALUES
+		(#{productNum}, #{productName},#{benefit},#{price},#{createDate})
+	</insert>
+	
+	<update id="spUpdate" parameterType ="Shop_ProductDTO">
+		UPDATE COMMENT SET 
+		rContent=#{rContent} where productNum=#{productNum}
+	</update>
+
+	<delete id="spDelete">
+		delete from comment where productNum=#{productNum}
+	</delete>
+
+</mapper>
