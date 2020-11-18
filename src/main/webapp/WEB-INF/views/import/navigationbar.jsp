@@ -32,7 +32,7 @@
 			<ul class="nav-right">
 				
 				<li class="user-profile header-notification"><a href="#!">
-						 <span>kwack ji yong</span> <i
+						 <span>${sessionScope.userData.userName}</span> <i
 						class="ti-angle-down"></i>
 				</a>
 					<ul class="show-notification profile-notification">
@@ -44,7 +44,7 @@
 						</a></li>
 						<li><a href="#"> <i class="ti-lock"></i> Lock Screen
 						</a></li>
-						<li><a href="auth-normal-sign-in.html"> <i
+						<li><a href="logout.ing"> <i
 								class="ti-layout-sidebar-left"></i> Logout
 						</a></li>
 					</ul></li>

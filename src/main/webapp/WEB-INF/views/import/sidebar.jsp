@@ -8,7 +8,7 @@
 		<div class="main-menu-header">
 
 			<div class="user-details">
-				<span>곽지용</span> <span id="more-details">Admin<i
+				<span>${sessionScope.userData.userName}</span> <span id="more-details">grant${sessionScope.userData.userAuthority}<i
 					class="ti-angle-down"></i></span>
 			</div>
 		</div>
@@ -17,7 +17,7 @@
 			<ul>
 				<li class="more-details"><a href="#"><i class="ti-user"></i>View
 						Profile</a> <a href="#!"><i class="ti-settings"></i>Settings</a> <a
-					href="auth-normal-sign-in.html"><i
+					href="logout.ing"><i
 						class="ti-layout-sidebar-left"></i>Logout</a></li>
 			</ul>
 		</div>

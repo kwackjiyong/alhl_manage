@@ -23,6 +23,13 @@
 	
 	<context:component-scan base-package="com.manage.alhl" />
 	
-	
+	<beans:bean id="grantInterceptor" class="com.manage.alhl.handler.grantCheck"></beans:bean>
+    
+    <interceptors>
+        <interceptor>
+            <mapping path="/*.do" />
+            <beans:ref bean="grantInterceptor"/>
+        </interceptor>
+    </interceptors>
 	
 </beans:beans>
