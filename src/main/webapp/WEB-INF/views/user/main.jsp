@@ -57,10 +57,20 @@
 															<h5>사용자 조회</h5>
 														</div>
 														<div class="card-header-right">
-															<select name="cars" id="cars" class="form-control">
-																<option value="volvo">20개 보기</option>
-																<option value="saab">50개 보기</option>
-															</select>
+															<div class="row">
+																<div class="col-sm-7 row">
+																	<input type="search" class="form-control col-sm-8" />
+																	<button class ="btn btn-primary btn-sm col-sm-4" >검색</button>
+																</div>
+
+																<div class="col-sm-5">
+																	<select name="cars" id="cars" class="form-control">
+																		<option value="volvo">20개 보기</option>
+																		<option value="saab">50개 보기</option>
+																	</select>
+																</div>
+															</div>
+															
 														</div>
 													</div>
 													<div class="card-block">
@@ -79,16 +89,42 @@
 																		</tr>
 																	</thead>
 																	<tbody>
-																		<tr id = "btnRow">
-																			<th scope="row">1</th>
-																			<td>1</td>
-																			<td>2</td>
-																			<td>@3</td>
-																			<td>@4</td>
-																			<td>@5</td>
-																			<td>@6</td>
+																		<tr onclick="javascript:location.href ='user_Find.do'">
+																			<th>1</th>
+																			<td>songhuisu</td>
+																			<td>송희수</td>
+																			<td>970816</td>
+																			<td>여자</td>
+																			<td>song@naver.com</td>
+																			<td>20/11/11</td>
 																		</tr>
-																		
+																		<tr onclick="javascript:location.href ='user_Find.do'">
+																			<th>2</th>
+																			<td>songhuisu</td>
+																			<td>송희수</td>
+																			<td>970816</td>
+																			<td>여자</td>
+																			<td>song@naver.com</td>
+																			<td>20/11/11</td>
+																		</tr>
+																		<tr onclick="javascript:location.href ='user_Find.do'">
+																			<th>3</th>
+																			<td>songhuisu</td>
+																			<td>송희수</td>
+																			<td>970816</td>
+																			<td>여자</td>
+																			<td>song@naver.com</td>
+																			<td>20/11/11</td>
+																		</tr>
+																		<tr onclick="javascript:location.href ='user_Find.do'">
+																			<th>4</th>
+																			<td>songhuisu</td>
+																			<td>송희수</td>
+																			<td>970816</td>
+																			<td>여자</td>
+																			<td>song@naver.com</td>
+																			<td>20/11/11</td>
+																		</tr>
 																	</tbody>
 																</table>
 															</div>
@@ -110,13 +146,7 @@
 		</div>
 	</div>
 
-	<script>
-	$(document).ready(function() {
-		$("#btnRow").click(function() {
-			location.href = "user_Find.do";
-		});
-	})
-	</script>
+	
 
 	<!------------ 자바스크립트 임포트 ------------>
 	<c:import url="../import/javascript.jsp" />
