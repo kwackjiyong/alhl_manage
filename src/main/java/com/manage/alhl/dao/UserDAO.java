@@ -14,7 +14,12 @@ public class UserDAO {
 	// 컨테이너가 객체를 자동으로 생성 Autowired
 	@Autowired
 	public SqlSessionTemplate mybatis;
-
+	
+	public UserDTO userSelectFind(UserDTO dto) {
+		// TODO Auto-generated method stub
+		return mybatis.selectOne("userMapper.userSelectOne", dto);
+	}
+	
 	public UserDTO userSelectOne(UserDTO dto) {
 		// TODO Auto-generated method stub
 		dto.setUserPassword(SHA256.getSHA256(dto.getUserPassword()));
@@ -30,9 +35,10 @@ public class UserDAO {
 		return mybatis.insert("userMapper.userInsert", dto);
 	}
 
-	public List<UserDTO> userSelect() {
+	public List<UserDTO> userSelect(UserDTO dto) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		return mybatis.selectList("userMapper.userSelectIf", dto);
 	}
 
 	public int userIdCheck(UserDTO dto) {

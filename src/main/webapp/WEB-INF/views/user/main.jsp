@@ -58,10 +58,10 @@
 														</div>
 														<div class="card-header-right">
 															<div class="row">
-																<div class="col-sm-7 row">
-																	<input type="search" class="form-control col-sm-8" />
-																	<button class ="btn btn-primary btn-sm col-sm-4" >검색</button>
-																</div>
+																<form class="col-sm-7 row" action="manage_user.do">
+																	<input name="userId" type="search" class="form-control col-sm-8" />
+																	<button type="submit" class ="btn btn-primary btn-sm col-sm-4" >검색</button>
+																</form>
 
 																<div class="col-sm-5">
 																	<select name="cars" id="cars" class="form-control">
@@ -85,46 +85,28 @@
 																			<th>생년월일</th>
 																			<th>성별</th>
 																			<th>이메일</th>
+																			<th>이메일인증여부</th>
+																			<th>캐쉬</th>
+																			<th>사용자 권한</th>
 																			<th>생성일</th>
 																		</tr>
 																	</thead>
 																	<tbody>
-																		<tr onclick="javascript:location.href ='user_Find.do'">
-																			<th>1</th>
-																			<td>songhuisu</td>
-																			<td>송희수</td>
-																			<td>970816</td>
-																			<td>여자</td>
-																			<td>song@naver.com</td>
-																			<td>20/11/11</td>
-																		</tr>
-																		<tr onclick="javascript:location.href ='user_Find.do'">
-																			<th>2</th>
-																			<td>songhuisu</td>
-																			<td>송희수</td>
-																			<td>970816</td>
-																			<td>여자</td>
-																			<td>song@naver.com</td>
-																			<td>20/11/11</td>
-																		</tr>
-																		<tr onclick="javascript:location.href ='user_Find.do'">
-																			<th>3</th>
-																			<td>songhuisu</td>
-																			<td>송희수</td>
-																			<td>970816</td>
-																			<td>여자</td>
-																			<td>song@naver.com</td>
-																			<td>20/11/11</td>
-																		</tr>
-																		<tr onclick="javascript:location.href ='user_Find.do'">
-																			<th>4</th>
-																			<td>songhuisu</td>
-																			<td>송희수</td>
-																			<td>970816</td>
-																			<td>여자</td>
-																			<td>song@naver.com</td>
-																			<td>20/11/11</td>
-																		</tr>
+																		<c:forEach items="${userdtos}" var="user">
+																			<tr onclick="javascript:location.href ='user_Find.do?userId=${user.userId}'">
+																				<th>2</th>
+																				<td>${user.userId}</td>
+																				<td>${user.userName}</td>
+																				<td>${user.userBirth}</td>
+																				<td>${user.userGender}</td>
+																				<td>${user.userEmail}</td>
+																				<td>${user.userEmailCertified}</td>
+																				<td>${user.cash}</td>
+																				<td>${user.userAuthority}</td>
+																				<td>${user.creatTime}</td>
+																			</tr>
+																		</c:forEach>
+																		
 																	</tbody>
 																</table>
 															</div>

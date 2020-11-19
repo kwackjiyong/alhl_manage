@@ -12,9 +12,16 @@
 	<select resultType="UserDTO" parameterType="UserDTO"
 		id="userSelectAll">SELECT * FROM USERDATA</select>
 
-	<select resultType="UserDTO" parameterType="UserDTO"
-		id="userSelectOne">SELECT * FROM USERDATA WHERE userId=#{userId}</select>
-
+	<select resultType="UserDTO" parameterType="UserDTO" id="userSelectOne">SELECT * FROM USERDATA WHERE userId=#{userId}</select>
+	
+	<select id="userSelectIf"  resultType="UserDTO" parameterType="UserDTO">
+	SELECT * FROM USERDATA
+	WHERE 1=1 
+	<if test="userId != ''">
+		AND userId like CONCAT('%',#{userId},'%')
+	</if>
+	</select>
+	
 	<insert id="userInsert" parameterType="UserDTO" >
 		INSERT INTO USERDATA
 		(userId,userName,userPassword,userBirth,creatTime,userGender,userEmail,userEmailHash,userEmailCertified)

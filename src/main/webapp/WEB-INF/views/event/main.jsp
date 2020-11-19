@@ -91,22 +91,7 @@
 																			<td>@7</td>
 																			<td><button class="btn btn-danger btn-round">중지</button></td>
 																		</tr>
-																		<%-- 	</c:forEach> --%>
-
-																		<%-- 	<c:forEach items="${list}" var="list">
-													<tr>
-														<td>${list.queId}</td>
-														<td><a href="#" onclick="javascript:location.href='question_info.do?queId=${list.queId}'" >${list.queTitle}</td>
-														<td>${list.userId}</td>
-														<td>${list.queTime}</td>
-														<c:if test="${null != list.queAnswer}">
-															<td style="color:green;">응답됨</td>
-														</c:if>
-														<c:if test="${null == list.queAnswer}">
-															<td style="color:red;">대기중</td>
-														</c:if>
-													</tr>
-												</c:forEach> --%>
+																		
 																	</tbody>
 																</table>
 															</div>

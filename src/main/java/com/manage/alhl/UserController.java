@@ -80,14 +80,20 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "manage_user.do")
-	public String manage_user() {
+	public String manage_user(Model model,UserDTO dto) {
+		if(dto.getUserId()==null) {
+			dto.setUserId("");
+		}
 		
+		List<UserDTO> dtos = userSer.userSelect(dto);
+		model.addAttribute("userdtos",dtos);
 		return "user/main";
 	}
 	
 	@RequestMapping(value = "user_Find.do")
-	public String user_Find() {
-		
+	public String user_Find(Model model,UserDTO dto) {
+		UserDTO udto = userSer.userSelectFind(dto);
+		model.addAttribute("userdtos",udto);
 		return "user/userFind";
 	}
 }

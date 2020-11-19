@@ -60,7 +60,7 @@
 																<h4 class="sub-title">사용자 id</h4>
 																<div class="form-group row">
 																	<div class="col-sm-10">
-																		<label class="form-label">songhuisu</label>
+																		<label class="form-label">${user.getUserId()}</label>
 																	</div>
 																</div>
 															</div>
@@ -68,7 +68,7 @@
 																<h4 class="sub-title">사용자명</h4>
 																<div class="form-group row">
 																	<div class="col-sm-10">
-																		<label class="form-label">송희수</label>
+																		<label class="form-label">${user.userName}</label>
 																	</div>
 																</div>
 															</div>

@@ -17,8 +17,12 @@ public class UserService{
 	@Autowired
 	public UserDAO dao;
 	
-	public List<UserDTO> userSelect() {
-		return dao.userSelect();
+	public List<UserDTO> userSelect(UserDTO dto) {
+		return dao.userSelect(dto);
+	}
+	public UserDTO userSelectFind(UserDTO dto) {
+		// TODO Auto-generated method stub
+		return dao.userSelectFind(dto);
 	}
 	public UserDTO userSelectOne(UserDTO dto) {
 		return dao.userSelectOne(dto);
