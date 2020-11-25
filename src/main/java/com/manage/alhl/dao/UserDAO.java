@@ -15,11 +15,19 @@ public class UserDAO {
 	@Autowired
 	public SqlSessionTemplate mybatis;
 	
+	//유저id로 한명의 유저데이터를 가져옴
 	public UserDTO userSelectFind(UserDTO dto) {
 		// TODO Auto-generated method stub
 		return mybatis.selectOne("userMapper.userSelectOne", dto);
 	}
 	
+	//일일 가입자 수
+	public int userCountToday() {
+		// TODO Auto-generated method stub
+		return mybatis.selectOne("userMapper.userSelectToday");
+	}
+	
+	//로그인시 사용
 	public UserDTO userSelectOne(UserDTO dto) {
 		// TODO Auto-generated method stub
 		dto.setUserPassword(SHA256.getSHA256(dto.getUserPassword()));

@@ -72,18 +72,7 @@
 									<div class="page-body">
 										<div class="row">
 											<!-- card1 start -->
-                                            <div class="col-md-4">
-                                                <div class="card widget-card-1">
-                                                    <div class="card-block-small">
-                                                        <i class="icofont icofont-pie-chart bg-c-blue card1-icon"></i>
-                                                        <span class="text-c-blue f-w-600">일일 방문자수</span>
-                                                        <h4>65,646 명</h4>
-                                                        <span class="f-left m-t-10 text-muted">
-                                                            <i class="text-c-green f-16 icofont icofont-tag m-r-10"></i>11/05 12:13에 업데이트 되었습니다.
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <!-- card1 end -->
                                             <!-- card1 start -->
                                             <div class="col-md-4">
@@ -91,7 +80,7 @@
                                                     <div class="card-block-small">
                                                         <i class="icofont icofont-ui-home bg-c-pink card1-icon"></i>
                                                         <span class="text-c-pink f-w-600">일일 검색 횟수</span>
-                                                        <h4>523,589 회</h4>
+                                                        <h4>${srchCnt} 회</h4>
                                                         <span class="f-left m-t-10 text-muted">
                                                             <i class="text-c-green f-16 icofont icofont-tag m-r-10"></i>11/05 12:13에 업데이트 되었습니다.
                                                         </span>
@@ -115,6 +104,18 @@
                                                 </div>
                                             </div>
                                             <!-- card1 end -->
+                                            <div class="col-md-4">
+                                                <div class="card widget-card-1">
+                                                    <div class="card-block-small">
+                                                        <i class="icofont icofont-pie-chart bg-c-blue card1-icon"></i>
+                                                        <span class="text-c-blue f-w-600">일일 가입자수</span>
+                                                        <h4>${userCnt} 명</h4>
+                                                        <span class="f-left m-t-10 text-muted">
+                                                            <i class="text-c-green f-16 icofont icofont-tag m-r-10"></i>11/05 12:13에 업데이트 되었습니다.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             
 											<div class="col-lg-6 col-md-12">
 												<div class="card widget-card-1">

@@ -20,6 +20,10 @@ public class UserService{
 	public List<UserDTO> userSelect(UserDTO dto) {
 		return dao.userSelect(dto);
 	}
+	public int userCountToday() {
+		// TODO Auto-generated method stub
+		return dao.userCountToday();
+	}
 	public UserDTO userSelectFind(UserDTO dto) {
 		// TODO Auto-generated method stub
 		return dao.userSelectFind(dto);

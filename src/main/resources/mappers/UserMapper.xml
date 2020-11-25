@@ -11,7 +11,10 @@
 
 	<select resultType="UserDTO" parameterType="UserDTO"
 		id="userSelectAll">SELECT * FROM USERDATA</select>
-
+	
+	<select resultType="int"
+		id="userSelectToday">SELECT count(userId) FROM USERDATA WHERE TO_DAYS(creatTime) = TO_DAYS(SYSDATE())</select>
+	
 	<select resultType="UserDTO" parameterType="UserDTO" id="userSelectOne">SELECT * FROM USERDATA WHERE userId=#{userId}</select>
 	
 	<select id="userSelectIf"  resultType="UserDTO" parameterType="UserDTO">

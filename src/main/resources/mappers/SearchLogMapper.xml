@@ -4,7 +4,23 @@
 <!-- [DB연결 사용법] 1. SQL문 작성 하고 다음과 같은 양식으로 만들어준다. -->
 <!-- sql문 작성 -->
 <mapper namespace="searchLogMapper">
+	<!-- 통계 -->
+	<select id="SearchLog_Month" parameterType="int" resultType="SearchLogDTO">
+		SELECT DATE_FORMAT(srchTime,'%Y%M') as srchWord, count(*) as srchId
+		FROM searchlog 
+		WHERE YEAR(srchTime) = #{years}
+		GROUP BY DATE_FORMAT(srchTime,'%Y%M')
+	</select>
+	<!-- 일일 검색량 -->
+	<select id="SearchLog_TodayCnt" resultType="int">
+		SELECT count(*)
+		FROM searchlog 
+		WHERE TO_DAYS(srchTime) = TO_DAYS(SYSDATE())
+	</select>
+	
 	<!-- 아래부터 내가만든 -->
+	
+	
 	<select id="SearchLog_USER" parameterType="UserDTO" resultType="SearchLogDTO">
 		SELECT * FROM searchlog 
 		WHERE userId = #{userId}
@@ -20,18 +36,12 @@
 		desc
 	</select>
 	
-	
 	<select id="SearchLog_1000" resultType="SearchLogDTO">
 		SELECT srchWord
 		FROM searchlog
 		group by srchWord
 		limit 1000
 	</select>
-	
-	
-	
-	
-	
 	
 	<select id="SearchLog_AGE" parameterType="UserDTO" resultType="SearchLogDTO">
 		SELECT srchWord
