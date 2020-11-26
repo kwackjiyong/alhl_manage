@@ -92,9 +92,11 @@
 																		</tr>
 																	</thead>
 																	<tbody>
+																		. <c:set var="cnt">0</c:set>
 																		<c:forEach items="${userdtos}" var="user">
 																			<tr onclick="javascript:location.href ='user_Find.do?userId=${user.userId}'">
-																				<th>2</th>
+																				<c:set var="cnt" value="${cnt+1}" />
+																				<th>${cnt}</th>
 																				<td>${user.userId}</td>
 																				<td>${user.userName}</td>
 																				<td>${user.userBirth}</td>
