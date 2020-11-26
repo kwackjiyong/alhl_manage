@@ -78,7 +78,7 @@
 																<div class="form-group row">
 																	<div class="col-sm-10">
 																		<label class="form-label">
-																			<c:if test="${user.userGender == 0}">
+																			<c:if test="${user.userGender == 2}">
 																				여자
 																			</c:if>
 																			<c:if test="${user.userGender == 1}">

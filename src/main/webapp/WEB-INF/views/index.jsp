@@ -72,23 +72,6 @@
 									<div class="page-body">
 										<div class="row">
 											<!-- card1 start -->
-                                            
-                                            <!-- card1 end -->
-                                            <!-- card1 start -->
-                                            <div class="col-md-4">
-                                                <div class="card widget-card-1">
-                                                    <div class="card-block-small">
-                                                        <i class="icofont icofont-ui-home bg-c-pink card1-icon"></i>
-                                                        <span class="text-c-pink f-w-600">일일 검색 횟수</span>
-                                                        <h4>${srchCnt} 회</h4>
-                                                        <span class="f-left m-t-10 text-muted">
-                                                            <i class="text-c-green f-16 icofont icofont-tag m-r-10"></i>11/05 12:13에 업데이트 되었습니다.
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- card1 end -->
-                                            <!-- card1 start -->
                                             <div class="col-md-4">
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small">
@@ -104,6 +87,21 @@
                                                 </div>
                                             </div>
                                             <!-- card1 end -->
+                                            <!-- card1 start -->
+                                            <div class="col-md-4">
+                                                <div class="card widget-card-1">
+                                                    <div class="card-block-small">
+                                                        <i class="icofont icofont-ui-home bg-c-pink card1-icon"></i>
+                                                        <span class="text-c-pink f-w-600">일일 검색 횟수</span>
+                                                        <h4>${srchCnt} 회</h4>
+                                                        <span class="f-left m-t-10 text-muted">
+                                                            <i class="text-c-green f-16 icofont icofont-tag m-r-10"></i>11/05 12:13에 업데이트 되었습니다.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- card1 end -->
+                                            
                                             <div class="col-md-4">
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small">
@@ -218,6 +216,34 @@
 		    }
 		
 		});
+		
+		
+		
+		var month_all= new Array();	   // 전체값
+		var month_10= new Array();	 
+		var month_20= new Array();	  
+		var month_30= new Array();	  
+		var month_40= new Array();	  
+		var month_50= new Array();	   
+		<c:forEach items="${srchMonthData[0]}" var="mon"> 
+			month_all.push(${mon.srchId});
+		</c:forEach>
+		<c:forEach items="${srchMonthData[1]}" var="mon"> 
+			month_10.push(${mon.srchId});
+		</c:forEach>
+		<c:forEach items="${srchMonthData[2]}" var="mon"> 
+			month_20.push(${mon.srchId});
+		</c:forEach>
+		<c:forEach items="${srchMonthData[3]}" var="mon"> 
+			month_30.push(${mon.srchId});
+		</c:forEach>
+		<c:forEach items="${srchMonthData[4]}" var="mon"> 
+			month_40.push(${mon.srchId});
+		</c:forEach>
+		<c:forEach items="${srchMonthData[5]}" var="mon">
+			month_50.push(${mon.srchId});
+		</c:forEach>
+		
 		Highcharts.chart('container2', {
 			
 		    title: {
@@ -257,22 +283,22 @@
 		
 		    series: [{
 		        name: 'Total',
-		        data: [439340, 525030, 571770, 696580, 970310, 1199310, 1371330, 1541750]
+		        data: month_all
 		    }, {
 		        name: '10대',
-		        data: [249161, 240642, 297423, 298514, 324905, 302826, 381217, 404348]
-		    }, {
+		        data: month_10
+		    }, { 
 		        name: '20대',
-		        data: [117443, 177222, 160051, 197712, 201853, 243774, 321475, 393877]
+		        data: month_20
 		    }, {
 		        name: '30대',
-		        data: [null, 50000, 60000, 70000, 80000, 90000, 100000, 120000]
+		        data: month_30
 		    }, {
 		        name: '40대',
-		        data: [null, null, 10000, 20000, 30000, 45000, 50000, 52000]
+		        data: month_40
 		    }, {
 		        name: '50대이상',
-		        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+		        data: month_50
 		    }],
 		
 		    responsive: {

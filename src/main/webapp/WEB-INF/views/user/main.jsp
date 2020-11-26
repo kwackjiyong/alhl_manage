@@ -92,7 +92,7 @@
 																		</tr>
 																	</thead>
 																	<tbody>
-																		. <c:set var="cnt">0</c:set>
+																		<c:set var="cnt">0</c:set>
 																		<c:forEach items="${userdtos}" var="user">
 																			<tr onclick="javascript:location.href ='user_Find.do?userId=${user.userId}'">
 																				<c:set var="cnt" value="${cnt+1}" />
@@ -100,7 +100,10 @@
 																				<td>${user.userId}</td>
 																				<td>${user.userName}</td>
 																				<td>${user.userBirth}</td>
-																				<td>${user.userGender}</td>
+																				<td>
+																				<c:if test="${user.userGender == 2}">여자</c:if>
+																				<c:if test="${user.userGender == 1}">남자</c:if>
+																				</td>
 																				<td>${user.userEmail}</td>
 																				<td>${user.userEmailCertified}</td>
 																				<td>${user.cash}</td>

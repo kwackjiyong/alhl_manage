@@ -1,6 +1,7 @@
 package com.manage.alhl;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -51,16 +52,19 @@ public class HomeController {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
-		int today_years = date.getYear();
 		int today_userCnt = userSer.userCountToday();
-		List<SearchLogDTO> srchMonthdtos = srchLogSer.SearchLog_Month(today_years);
+		Object[] srch_age = new Object[6];
+		for(int i=0;i<6;i++) {
+			srch_age[i] = srchLogSer.SearchLog_Month(i);
+			System.out.println((List)srch_age[i]);
+		}
 		int today_srchCnt = srchLogSer.SearchLog_Today();
 		
 		
 		
 		model.addAttribute("userCnt", today_userCnt);
 		model.addAttribute("srchCnt", today_srchCnt);
-		model.addAttribute("srchMonthData", srchMonthdtos);
+		model.addAttribute("srchMonthData",srch_age);
 		return "index";
 	}
 	
