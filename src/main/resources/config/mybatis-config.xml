@@ -6,6 +6,7 @@
 <!-- [DB연결 사용법] 8. 만든 DTO와 Mapper정의하기 -->
 	<typeAliases>
 		<typeAlias type="com.manage.alhl.dto.UserDTO" alias="UserDTO"></typeAlias>
+		<typeAlias type="com.manage.alhl.dto.ShopDTO" alias="ShopDTO"></typeAlias>
 		<typeAlias type="com.manage.alhl.dto.Shop_ProductDTO" alias="Shop_ProductDTO"></typeAlias>
 		<typeAlias type="com.manage.alhl.dto.SearchLogDTO" alias="SearchLogDTO"></typeAlias>
 	</typeAliases>
@@ -14,6 +15,7 @@
 		<mapper resource="mappers/UserMapper.xml" />
 		<mapper resource="mappers/Shop_Product_Mapper.xml" />
 		<mapper resource="mappers/SearchLogMapper.xml" />
+		<mapper resource="mappers/ShopMapper.xml" />
 	</mappers>
 	
 </configuration>

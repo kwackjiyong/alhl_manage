@@ -48,19 +48,12 @@
 													</div>
 													<div class="card-block text-center">
 														<div class="row">
-															<div class="col-2">
-																<h4 class="sub-title">num</h4>
-																<div class="form-group row">
-																	<div class="col-sm-10">
-																		<label class="form-label">124215</label>
-																	</div>
-																</div>
-															</div>
+															
 															<div class="col-2">
 																<h4 class="sub-title">사용자 id</h4>
 																<div class="form-group row">
 																	<div class="col-sm-10">
-																		<label class="form-label">${user.getUserId()}</label>
+																		<label class="form-label">${user.userId}</label>
 																	</div>
 																</div>
 															</div>
@@ -76,7 +69,7 @@
 																<h4 class="sub-title">생년월일</h4>
 																<div class="form-group row">
 																	<div class="col-sm-10">
-																		<label class="form-label">970816</label>
+																		<label class="form-label">${user.userBirth}</label>
 																	</div>
 																</div>
 															</div>
@@ -84,7 +77,15 @@
 																<h4 class="sub-title">성별</h4>
 																<div class="form-group row">
 																	<div class="col-sm-10">
-																		<label class="form-label">여자</label>
+																		<label class="form-label">
+																			<c:if test="${user.userGender == 0}">
+																				여자
+																			</c:if>
+																			<c:if test="${user.userGender == 1}">
+																				남자
+																			</c:if>
+																			
+																		</label>
 																	</div>
 																</div>
 															</div>
@@ -92,11 +93,18 @@
 																<h4 class="sub-title">이메일</h4>
 																<div class="form-group row">
 																	<div class="col-sm-10">
-																		<label class="form-label">song@naver.com</label>
+																		<label class="form-label">${user.userEmail}</label>
 																	</div>
 																</div>
 															</div>
-															
+															<div class="col-2">
+																<h4 class="sub-title">cash</h4>
+																<div class="form-group row">
+																	<div class="col-sm-10">
+																		<label class="form-label">${user.cash}꿀</label>
+																	</div>
+																</div>
+															</div>
 														</div>
 
 														
@@ -121,16 +129,16 @@
 																<h4 class="sub-title">사용 중인 이용권</h4>
 																<div class="form-group row">
 																	<div class="col-lg-12">
-																		<label>애곰이</label>
+																		<label>${shop.productNum}</label>
 																	</div>
 																</div>
 																<div class="form-group row">
 																	<div class="col-sm-8">
 																		<select name="cars" id="cars" class="form-control">
-																			<option value="1">애곰이</option>
-																			<option value="2">곰곰이</option>
-																			<option value="3">꿀곰이</option>
-																			<option value="4">불곰이</option>
+																			<option value="0">애곰이</option>
+																			<option value="1">곰곰이</option>
+																			<option value="2">꿀곰이</option>
+																			<option value="3">불곰이</option>
 																			
 																		</select>
 																	</div>
@@ -144,7 +152,7 @@
 																<h4 class="sub-title">남은 기간</h4>
 																<div class="form-group row">
 																	<div class="col-lg-12">
-																		<label>2020-11-17 11:23:01 까지</label>
+																		<label>${shop.checkOutTime} 까지</label>
 																	</div>
 																</div>
 																<div class="form-group row">

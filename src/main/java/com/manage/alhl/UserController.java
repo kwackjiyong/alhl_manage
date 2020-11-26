@@ -14,13 +14,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.manage.alhl.dto.ShopDTO;
 import com.manage.alhl.dto.UserDTO;
+import com.manage.alhl.service.ShopService;
 import com.manage.alhl.service.UserService;
 
 @Controller
 public class UserController {
 	@Autowired
 	UserService userSer;
+	@Autowired
+	ShopService shopSer;
 	@RequestMapping(value = "loginPage.do" , method = RequestMethod.GET)
 	public ModelAndView LoginPage(HttpServletRequest request, HttpServletResponse response, Model model, UserDTO userdto) {
 		
@@ -93,7 +97,9 @@ public class UserController {
 	@RequestMapping(value = "user_Find.do")
 	public String user_Find(Model model,UserDTO dto) {
 		UserDTO udto = userSer.userSelectFind(dto);
-		model.addAttribute("userdtos",udto);
+		ShopDTO sdto = shopSer.shopSelectOne(dto);
+		model.addAttribute("user",udto);
+		model.addAttribute("shop",sdto);
 		return "user/userFind";
 	}
 }
