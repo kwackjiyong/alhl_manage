@@ -35,5 +35,16 @@
 		SELECT * FROM shop_product
 	</select>
 	
-	
+	<!-- 사용자의 이용권 checkOuttime만 변경 -->
+	<update id="shopUpdate_time" parameterType="ShopDTO">
+		UPDATE SHOP 
+		SET checkOutTime=#{checkOutTime}
+		WHERE userId=#{userId}
+	</update>
+	<!-- 사용자의 이용권 productNum만 변경 -->
+	<update id="shopUpdate_product" parameterType="ShopDTO">
+		UPDATE SHOP 
+		SET productNum=#{productNum}
+		WHERE userId=#{userId}
+	</update>
 </mapper>

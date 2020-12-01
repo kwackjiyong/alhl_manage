@@ -27,7 +27,6 @@
 
 					<div class="pcoded-content">
 						<div class="pcoded-inner-content">
-
 							<!-- Main-body start -->
 							<div class="main-body">
 								<div class="page-wrapper">
@@ -134,7 +133,7 @@
 																</div>
 																<div class="form-group row">
 																	<div class="col-sm-8">
-																		<select name="cars" id="cars" class="form-control">
+																		<select name="productNum" id="cars" class="form-control">
 																			<option value="0">애곰이</option>
 																			<option value="1">곰곰이</option>
 																			<option value="2">꿀곰이</option>
@@ -144,7 +143,7 @@
 																	</div>
 																	
 																	<div class="col-sm-4">
-																		<button class="btn btn-danger btn-round btn-sm">변경</button>
+																		<button type="submit" class="btn btn-danger btn-round btn-sm">변경</button>
 																	</div>
 																</div>
 															</div>
@@ -157,14 +156,11 @@
 																</div>
 																<div class="form-group row">
 																	<div class="col-sm-8">
-																		<select name="cars" id="cars" class="form-control">
-																			<option value="1">1주일 연장</option>
-																			<option value="2">만료</option>
-																		</select>
+																		<input name="checkOutTime" type="date" class="form-control" value="${user.userBirth}">
 																	</div>
 																	
 																	<div class="col-sm-4">
-																		<button class="btn btn-danger btn-round btn-sm">변경</button>
+																		<button type="submit" class="btn btn-danger btn-round btn-sm">변경</button>
 																	</div>
 																</div>
 															</div>
@@ -186,6 +182,7 @@
 													<div class="card-block">
 														<div class="row">
 															<div class="col-6 b-r-default">
+																<h4 class="sub-title">이전 비고란</h4>
 																${user.userRemark}
 															</div>
 															<form  class="col-6" action="userUpdate_remark.ing" method="post">
@@ -239,43 +236,51 @@
 																		</tr>
 																	</thead>
 																	<tbody>
+																		<c:forEach items="${list}" var="log">
 																		<tr>
-																			<th scope="row">1</th>
-																			<td>rhkrwldyd</td>
-																			<td>2155</td>
-																			<td>불곰이</td>
-																			<td>20/06/27</td>
+																			<th>${log.sLogId}</th>
+																			<td>${log.userId}</td>
+																			<td>${log.payment}</td>
+																			<td>${log.productNum}</td>
+																			<td>${log.logDate}</td>
 																		</tr>
-																		<tr>
-																			<th scope="row">2</th>
-																			<td>rhkrwldyd</td>
-																			<td>2155</td>
-																			<td>불곰이</td>
-																			<td>20/06/27</td>
-																		</tr>
-																		<tr>
-																			<th scope="row">3</th>
-																			<td>rhkrwldyd</td>
-																			<td>2155</td>
-																			<td>불곰이</td>
-																			<td>20/06/27</td>
-																		</tr>
-																		<tr>
-																			<th scope="row">4</th>
-																			<td>rhkrwldyd</td>
-																			<td>2155</td>
-																			<td>불곰이</td>
-																			<td>20/06/27</td>
-																		</tr>
-																		<tr>
-																			<th scope="row">5</th>
-																			<td>rhkrwldyd</td>
-																			<td>2155</td>
-																			<td>불곰이</td>
-																			<td>20/06/27</td>
-																		</tr>
-																		
+																		</c:forEach>
 																	</tbody>
+																</table>
+																<table class="table">
+																	<tr>
+																		<td></td>
+																		<td>
+																			<div class="btn-group" role="group"
+																				aria-label="Basic example">
+																				<c:if test="${1 != listPageNum}">
+																					<button type="button"
+																						class="btn btn-primary btn-sm"
+																						onclick="javascript:location.href='userFind.do?pageNum=1&&userId=${user.userId}';">처음</button>
+																					<button type="button"
+																						class="btn btn-primary btn-sm"
+																						onclick="javascript:location.href='user_Find.do?pageNum=${listPageNum-1}&&userId=${user.userId}';">이전</button>
+																				</c:if>
+																				<c:forEach items="${listPageNumList}" var="page">
+																					<button type="button"
+																						class="btn btn-outline-primary btn-sm"
+																						onclick="javascript:location.href='user_Find.do?pageNum=${page}&&userId=${user.userId}';">
+																						${page}</button>
+
+																				</c:forEach>
+																				<c:if
+																					test="${listPageNumList_lastNum != listPageNum}">
+																					<button type="button"
+																						class="btn btn-primary btn-sm"
+																						onclick="javascript:location.href='user_Find.do?pageNum=${listPageNum+1}&&userId=${user.userId}';">다음</button>
+																					<button type="button"
+																						class="btn btn-primary btn-sm"
+																						onclick="javascript:location.href='user_Find.do?pageNum=${listPageNumList_lastNum}&&userId=${user.userId}';">마지막</button>
+																				</c:if>
+																			</div>
+																		</td>
+																		<td></td>
+																	</tr>
 																</table>
 															</div>
 														</div>

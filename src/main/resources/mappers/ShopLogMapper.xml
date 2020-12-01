@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- [DB연결 사용법] 1. SQL문 작성 하고 다음과 같은 양식으로 만들어준다. -->
+<!-- sql문 작성 -->
+<mapper namespace="shoplogMapper">
+	<!-- 전체 구매내역 -->
+	<select id="shoplogSelect" resultType="ShopLogDTO">
+		SELECT * FROM Shop_Log
+	</select>
+
+	<!-- 사용자 구매내역 -->
+	<select id="shoplogSelect_user" parameterType="UserDTO" resultType="ShopLogDTO">
+		SELECT * FROM Shop_Log WHERE userId = #{userId}
+	</select>
+	
+	<!-- 구매이력 기록 -->
+	<insert id="shoplogInsert" parameterType="ShopLogDTO">
+		INSERT INTO Shop_Log
+		(userId,productNum,reCount)
+		VALUES
+		(#{userId}, #{productNum},#{reCount})
+	</insert>
+	
+</mapper>

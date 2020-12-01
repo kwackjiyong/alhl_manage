@@ -31,5 +31,10 @@ public class ShopDao {
 		return mybatis.update("shopMapper.shopInsert_user", dto);
 	}
 	
-	
+	public int shopUpdate_product(ShopDTO dto) {
+		return mybatis.update("shopMapper.shopUpdate_product", dto);
+	}
+	public int shopUpdate_time(ShopDTO dto) {
+		return mybatis.update("shopMapper.shopUpdate_time", dto);
+	}
 }

@@ -37,7 +37,7 @@
 										<div class="row align-items-end">
 											<div class="col-lg-12">
 												<div class="page-header-title">
-													<i class="ti-star" style="background-color: #93BE52"></i>
+													<i class="ti-user" style="background-color: #4680ff"></i>
 													<div class="pcoded-mtext">
 														<h4>고객 리스트</h4>
 													</div>

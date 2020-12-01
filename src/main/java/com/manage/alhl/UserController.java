@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.manage.alhl.dto.ShopDTO;
+import com.manage.alhl.dto.ShopLogDTO;
 import com.manage.alhl.dto.UserDTO;
+import com.manage.alhl.service.ShopLogService;
 import com.manage.alhl.service.ShopService;
 import com.manage.alhl.service.UserService;
 
@@ -25,7 +27,8 @@ public class UserController {
 	UserService userSer;
 	@Autowired
 	ShopService shopSer;
-	
+	@Autowired
+	ShopLogService shoplogSer;
 	
 	//페이지 이동 do ------------------------------------------------------------------------------------------
 	
@@ -76,9 +79,36 @@ public class UserController {
 	}
 	// 사용자 정보 관리 페이지 이동
 	@RequestMapping(value = "user_Find.do")
-	public String user_Find(Model model,UserDTO dto) {
+	public String user_Find(Model model,UserDTO dto,HttpServletRequest request, HttpServletResponse response) throws Exception {
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		int pageNum;
+		int separatorNum;
+		int pgseparatorNum;
+		try {
+			pageNum = Integer.parseInt(request.getParameter("pageNum")); // 페이지 넘버를 리퀘스트에서 받아서 지정해유
+		}catch(Exception e) {
+			pageNum = 1; //페이지넘버가 지정하지않았을시 1페이지루 가 
+		}
+		try {
+			separatorNum = Integer.parseInt(request.getParameter("separatorNum")); //리스트 분할갯수를 리퀘스트에서 받아서 지정해유
+		}catch(Exception e) {
+			separatorNum = 5;//페이지 분할 갯수가 지정하지 않았을시 7개씩
+		}
+		try {
+			pgseparatorNum = Integer.parseInt(request.getParameter("pgseparatorNum")); //페이지 분할갯수를 리퀘스트에서 받아서 지정해유
+		}catch(Exception e) {
+			pgseparatorNum = 5;//페이지 분할 갯수가 지정하지 않았을시 5개씩
+		}
+		
 		UserDTO udto = userSer.userSelectFind(dto);
 		ShopDTO sdto = shopSer.shopSelectOne(dto);
+		
+		List<ShopLogDTO> sldtos = shoplogSer.shopSelect_user(dto);
+		if(sldtos.size() != 0) { //없을경우 페이징 안함
+			com.manage.alhl.util.Paging.AutoPaging(request, response, model, sldtos, pageNum, separatorNum,pgseparatorNum); //자동페이징
+		}
 		model.addAttribute("user",udto);
 		model.addAttribute("shop",sdto);
 		return "user/userFind";
@@ -166,7 +196,7 @@ public class UserController {
 		} else {
 			System.out.println("유저정보 변경 실패");
 		}
-
+		
 		return "redirect:/user_Find.do?userId=" + userdto.getUserId();
 	}
 	

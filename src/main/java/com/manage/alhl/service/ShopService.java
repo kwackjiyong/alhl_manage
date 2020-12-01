@@ -35,4 +35,11 @@ public class ShopService{
 	public int shopInsert_user(ShopDTO dto) {
 		return dao.shopInsert_user(dto);
 	}
+	
+	public int shopUpdate_time(ShopDTO dto) {
+		return dao.shopUpdate_time(dto);
+	}
+	public int shopUpdate_product(ShopDTO dto) {
+		return dao.shopUpdate_product(dto);
+	}
 }

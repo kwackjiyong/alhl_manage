@@ -9,6 +9,7 @@
 		<typeAlias type="com.manage.alhl.dto.ShopDTO" alias="ShopDTO"></typeAlias>
 		<typeAlias type="com.manage.alhl.dto.Shop_ProductDTO" alias="Shop_ProductDTO"></typeAlias>
 		<typeAlias type="com.manage.alhl.dto.SearchLogDTO" alias="SearchLogDTO"></typeAlias>
+		<typeAlias type="com.manage.alhl.dto.ShopLogDTO" alias="ShopLogDTO"></typeAlias>
 	</typeAliases>
 	
 	<mappers>
@@ -16,6 +17,7 @@
 		<mapper resource="mappers/Shop_Product_Mapper.xml" />
 		<mapper resource="mappers/SearchLogMapper.xml" />
 		<mapper resource="mappers/ShopMapper.xml" />
+		<mapper resource="mappers/ShopLogMapper.xml" />
 	</mappers>
 	
 </configuration>
