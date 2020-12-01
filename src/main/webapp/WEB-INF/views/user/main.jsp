@@ -79,7 +79,6 @@
 																<table class="table table-hover">
 																	<thead>
 																		<tr>
-																			<th>#</th>
 																			<th>사용자id</th>
 																			<th>이름</th>
 																			<th>생년월일</th>
@@ -92,11 +91,8 @@
 																		</tr>
 																	</thead>
 																	<tbody>
-																		<c:set var="cnt">0</c:set>
-																		<c:forEach items="${userdtos}" var="user">
-																			<tr onclick="javascript:location.href ='user_Find.do?userId=${user.userId}'">
-																				<c:set var="cnt" value="${cnt+1}" />
-																				<th>${cnt}</th>
+																		<c:forEach items="${list}" var="user">
+																			<tr onclick="javascript:location.href ='user_Find.do?userId=${user.userId}'">							
 																				<td>${user.userId}</td>
 																				<td>${user.userName}</td>
 																				<td>${user.userBirth}</td>
@@ -111,8 +107,43 @@
 																				<td>${user.creatTime}</td>
 																			</tr>
 																		</c:forEach>
-																		
 																	</tbody>
+																</table>
+
+																<table class="table">
+																	<tr>
+																		<td></td>
+																		<td>
+																			<div class="btn-group" role="group"
+																				aria-label="Basic example">
+																				<c:if test="${1 != listPageNum}">
+																					<button type="button"
+																						class="btn btn-primary btn-sm"
+																						onclick="javascript:location.href='manage_user.do?pageNum=1';">처음</button>
+																					<button type="button"
+																						class="btn btn-primary btn-sm"
+																						onclick="javascript:location.href='manage_user.do?pageNum=${listPageNum-1}';">이전</button>
+																				</c:if>
+																				<c:forEach items="${listPageNumList}" var="page">
+																					<button type="button"
+																						class="btn btn-outline-primary btn-sm"
+																						onclick="javascript:location.href='manage_user.do?pageNum=${page}';">
+																						${page}</button>
+
+																				</c:forEach>
+																				<c:if
+																					test="${listPageNumList_lastNum != listPageNum}">
+																					<button type="button"
+																						class="btn btn-primary btn-sm"
+																						onclick="javascript:location.href='manage_user.do?pageNum=${listPageNum+1}';">다음</button>
+																					<button type="button"
+																						class="btn btn-primary btn-sm"
+																						onclick="javascript:location.href='manage_user.do?pageNum=${listPageNumList_lastNum}';">마지막</button>
+																				</c:if>
+																			</div>
+																		</td>
+																		<td></td>
+																	</tr>
 																</table>
 															</div>
 														</div>

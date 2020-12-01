@@ -58,8 +58,6 @@ public class UserController {
 					out.flush();
 				}
 			} else {
-				System.out
-						.println("DBPW:" + selectDTO.getUserPassword() + "\n" + "inputPW:" + userdto.getUserPassword());
 				PrintWriter out = response.getWriter();
 				out.println("<script>alert('패스워드가 틀렸습니다.');</script>");
 				out.flush();
@@ -84,13 +82,39 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "manage_user.do")
-	public String manage_user(Model model,UserDTO dto) {
+	public String manage_user(Model model,UserDTO dto,HttpServletRequest request, HttpServletResponse response) throws Exception{
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
 		if(dto.getUserId()==null) {
 			dto.setUserId("");
 		}
 		
+		int pageNum;
+		int separatorNum;
+		int pgseparatorNum;
+		try {
+			pageNum = Integer.parseInt(request.getParameter("pageNum")); // 페이지 넘버를 리퀘스트에서 받아서 지정해유
+		}catch(Exception e) {
+			pageNum = 1; //페이지넘버가 지정하지않았을시 1페이지루 가 
+		}
+		try {
+			separatorNum = Integer.parseInt(request.getParameter("separatorNum")); //리스트 분할갯수를 리퀘스트에서 받아서 지정해유
+		}catch(Exception e) {
+			separatorNum = 5;//페이지 분할 갯수가 지정하지 않았을시 7개씩
+		}
+		try {
+			pgseparatorNum = Integer.parseInt(request.getParameter("pgseparatorNum")); //페이지 분할갯수를 리퀘스트에서 받아서 지정해유
+		}catch(Exception e) {
+			pgseparatorNum = 5;//페이지 분할 갯수가 지정하지 않았을시 5개씩
+		}
+		
+		
 		List<UserDTO> dtos = userSer.userSelect(dto);
-		model.addAttribute("userdtos",dtos);
+		if(dtos.size() != 0) { //없을경우 페이징 안함
+			com.manage.alhl.util.Paging.AutoPaging(request, response, model, dtos, pageNum, separatorNum,pgseparatorNum); //자동페이징
+		}
 		return "user/main";
 	}
 	
