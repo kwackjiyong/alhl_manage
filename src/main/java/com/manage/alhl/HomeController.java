@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.manage.alhl.dto.SearchDTO;
 import com.manage.alhl.dto.SearchLogDTO;
 import com.manage.alhl.service.SearchLogService;
 import com.manage.alhl.service.UserService;
@@ -53,10 +54,28 @@ public class HomeController {
 		
 		Date date = new Date();
 		int today_userCnt = userSer.userCountToday();
-		Object[] srch_age = new Object[6];
+		List<List<SearchLogDTO>> srch_age = new ArrayList<List<SearchLogDTO>>();
+		SearchLogDTO srch_Zero = new SearchLogDTO();
+		srch_Zero.setSrchId(0);
+		srch_Zero.setSrchWord("zero");
 		for(int i=0;i<6;i++) {
-			srch_age[i] = srchLogSer.SearchLog_Month(i);
-			System.out.println((List)srch_age[i]);
+			List<SearchLogDTO> srch_month = srchLogSer.SearchLog_Month(i);
+			List<SearchLogDTO> srch_temp = new ArrayList<SearchLogDTO>();
+			
+			for(int j=0;j<12;j++) {
+				int cnt=0;
+				for(int k=0;k<srch_month.size();k++) {
+					if(j+1 == Integer.parseInt(srch_month.get(k).getSrchWord())) {
+						srch_temp.add(srch_month.get(k));
+						cnt=1;
+					}
+				}
+				if(cnt==0) {
+					srch_temp.add(srch_Zero);
+				}
+			}
+			srch_age.add(srch_temp);
+			System.out.println(srch_month);
 		}
 		int today_srchCnt = srchLogSer.SearchLog_Today();
 		

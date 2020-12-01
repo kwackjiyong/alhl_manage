@@ -6,13 +6,13 @@
 <mapper namespace="searchLogMapper">
 	<!-- 통계 -->
 	<select id="SearchLog_Month" parameterType="int" resultType="SearchLogDTO">
-		SELECT DATE_FORMAT(srchTime,'%Y%M') as srchWord, count(*) as srchId
+		SELECT DATE_FORMAT(srchTime,'%m') as srchWord, count(*) as srchId
 		FROM searchlog
 		WHERE YEAR(srchTime) = YEAR(SYSDATE())
 		<if test="years != 0">
 		AND	userId in (SELECT userId FROM USERDATA WHERE   CONVERT ( ((YEAR(SYSDATE())-YEAR(userBirth))/10) ,  SIGNED INTEGER )=#{years} )
 		</if>
-		GROUP BY DATE_FORMAT(srchTime,'%Y%M')
+		GROUP BY DATE_FORMAT(srchTime,'%m')
 	</select>
 	<!-- 일일 검색량 -->
 	<select id="SearchLog_TodayCnt" resultType="int">

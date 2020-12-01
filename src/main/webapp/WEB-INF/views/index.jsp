@@ -75,7 +75,8 @@
                                             <div class="col-md-4">
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small">
-                                                        <i class="icofont icofont-warning-alt bg-c-green card1-icon"></i>
+                                                    <i class="ti-search"></i>
+                                                        <i class="icofont icofont-ui-v-card bg-c-green card1-icon"></i>
                                                         <span class="text-c-green f-w-600">이용권 매출</span>
                                                         <h4>5,173,242 won</h4>
                                                         <div>
@@ -91,7 +92,7 @@
                                             <div class="col-md-4">
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small">
-                                                        <i class="icofont icofont-ui-home bg-c-pink card1-icon"></i>
+                                                        <i class="icofont icofont-look bg-c-pink card1-icon"></i>
                                                         <span class="text-c-pink f-w-600">일일 검색 횟수</span>
                                                         <h4>${srchCnt} 회</h4>
                                                         <span class="f-left m-t-10 text-muted">
@@ -105,7 +106,7 @@
                                             <div class="col-md-4">
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small">
-                                                        <i class="icofont icofont-pie-chart bg-c-blue card1-icon"></i>
+                                                        <i class="icofont icofont-street-view bg-c-blue card1-icon"></i>
                                                         <span class="text-c-blue f-w-600">일일 가입자수</span>
                                                         <h4>${userCnt} 명</h4>
                                                         <span class="f-left m-t-10 text-muted">
@@ -225,33 +226,33 @@
 		var month_30= new Array();	  
 		var month_40= new Array();	  
 		var month_50= new Array();	   
-		<c:forEach items="${srchMonthData[0]}" var="mon"> 
+		<c:forEach items="${srchMonthData.get(0)}" var="mon"> 
 			month_all.push(${mon.srchId});
 		</c:forEach>
-		<c:forEach items="${srchMonthData[1]}" var="mon"> 
+		<c:forEach items="${srchMonthData.get(1)}" var="mon"> 
 			month_10.push(${mon.srchId});
 		</c:forEach>
-		<c:forEach items="${srchMonthData[2]}" var="mon"> 
+		<c:forEach items="${srchMonthData.get(2)}" var="mon"> 
 			month_20.push(${mon.srchId});
 		</c:forEach>
-		<c:forEach items="${srchMonthData[3]}" var="mon"> 
+		<c:forEach items="${srchMonthData.get(3)}" var="mon"> 
 			month_30.push(${mon.srchId});
 		</c:forEach>
-		<c:forEach items="${srchMonthData[4]}" var="mon"> 
+		<c:forEach items="${srchMonthData.get(4)}" var="mon"> 
 			month_40.push(${mon.srchId});
 		</c:forEach>
-		<c:forEach items="${srchMonthData[5]}" var="mon">
+		<c:forEach items="${srchMonthData.get(5)}" var="mon">
 			month_50.push(${mon.srchId});
 		</c:forEach>
 		
 		Highcharts.chart('container2', {
 			
 		    title: {
-		        text: '일간 검색 수'
+		        text: '월간 검색 수'
 		    },
 		
 		    subtitle: {
-		        text: '2020/11/05에 업데이트 되었습니다.'
+		        text: '연령별로 정렬'
 		    },
 		
 		    yAxis: {
