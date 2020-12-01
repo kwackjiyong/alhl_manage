@@ -183,36 +183,16 @@
 															<span>회원님의 비고란을 입력하세요.</span>
 														</div>
 													</div>
-													<div class="card-block text-center">
+													<div class="card-block">
 														<div class="row">
 															<div class="col-6 b-r-default">
-																<div class="table-responsive">
-																	<table class="table table-hover">
-																		<thead>
-																			<tr>
-																				<th>내용</th>
-																				<th>날짜</th>
-																			</tr>
-																		</thead>
-																		<tbody>
-																			<tr>
-																				<td>
-																					<span>단순변심 환불 1회</span>
-																				</td>
-																				<td>
-																					<p class="d-inline-block m-r-20">2020-11-11 01:26</p>
-																					<div class="progress d-inline-block"></div>
-																				</td>
-																			</tr>
-
-																		</tbody>
-																	</table>
-																</div>
+																${user.userRemark}
 															</div>
-															<div class="col-6">
-																<textarea rows="6" cols="10" class="form-control"></textarea>
-																<button class="btn btn-success btn-round">입력</button>
-															</div>
+															<form  class="col-6" action="userUpdate_remark.ing" method="post">
+																<input type="hidden" name="userId" value="${user.userId}">
+																<textarea name="userRemark" rows="6" cols="10" class="form-control"></textarea>
+																<button type="submit" class="btn btn-success btn-round">입력</button>
+															</form>
 														</div>
 													</div>
 												</div>

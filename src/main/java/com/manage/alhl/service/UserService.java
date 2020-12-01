@@ -50,4 +50,7 @@ public class UserService{
 	public int userEmailCheck(UserDTO dto) {
 		return dao.userEmailCheck(dto);
 	}
+	public int userUpdate_remark(UserDTO dto) {
+		return dao.userUpdate_remark(dto);
+	}
 }

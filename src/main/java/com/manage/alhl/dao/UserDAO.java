@@ -88,4 +88,9 @@ public class UserDAO {
 			return 0;
 		}
 	}
+	//비고란 수정
+	public int userUpdate_remark(UserDTO dto) {
+		return mybatis.update("userMapper.userModify_remark", dto);
+	}
+	
 }

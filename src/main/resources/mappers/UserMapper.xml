@@ -55,6 +55,10 @@
 		DELETE FROM USERDATA
 		WHERE userId=#{userId}
 	</delete>
-
-
+	<update id="userModify_remark" parameterType="UserDTO">
+		UPDATE USERDATA SET
+		userRemark=#{userRemark}
+		WHERE userId=#{userId}
+	</update>
+	
 </mapper>

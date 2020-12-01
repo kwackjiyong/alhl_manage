@@ -154,5 +154,20 @@ public class UserController {
 		
 		return "redirect:/user_Find.do?userId="+userdto.getUserId();
 	}
+
+	// 사용자 비고란 업데이트
+	@RequestMapping(value = "/userUpdate_remark.ing", method = RequestMethod.POST)
+	public String userUpdate_remark(HttpServletRequest request, HttpServletResponse response, Model model,
+			UserDTO userdto) throws Exception {
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		if (userSer.userUpdate_remark(userdto) == 1) {
+			System.out.println("유저정보 변경 성공");
+		} else {
+			System.out.println("유저정보 변경 실패");
+		}
+
+		return "redirect:/user_Find.do?userId=" + userdto.getUserId();
+	}
 	
 }
