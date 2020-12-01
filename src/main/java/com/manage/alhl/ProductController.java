@@ -7,9 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
-
-import com.manage.alhl.dto.Shop_ProductDTO;
 import com.manage.alhl.service.Shop_product_Service;
 import com.manage.alhl.service.UserService;
 
