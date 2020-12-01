@@ -144,7 +144,7 @@ public class UserController {
 	// 사용자 정보 업데이트
 	@RequestMapping("/userUpdate_info.ing")
 	public String userUpdate_info(HttpServletRequest request, HttpServletResponse response, Model model, UserDTO userdto) throws Exception{
-		session.invalidate();
+		
 		return "redirect:/index.do";
 	}
 	
