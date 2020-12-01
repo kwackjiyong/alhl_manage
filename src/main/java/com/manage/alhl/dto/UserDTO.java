@@ -12,6 +12,7 @@ public class UserDTO {		// 유저테이블
 	private int userEmailCertified; //이메일 확인여부
 	private int userAuthority; // 사용자 권한
 	private int cash;//올룩꿀룩 머니
+	private String userRemark; // 사용자 비고란
 	public String getUserId() {
 		return userId;
 	}
@@ -77,6 +78,12 @@ public class UserDTO {		// 유저테이블
 	}
 	public void setCash(int cash) {
 		this.cash = cash;
+	}
+	public String getUserRemark() {
+		return userRemark;
+	}
+	public void setUserRemark(String userRemark) {
+		this.userRemark = userRemark;
 	}
 	
 	
