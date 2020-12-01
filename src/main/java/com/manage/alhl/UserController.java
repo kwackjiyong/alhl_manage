@@ -1,6 +1,7 @@
 package com.manage.alhl;
 
 import java.io.PrintWriter;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -199,5 +200,36 @@ public class UserController {
 		
 		return "redirect:/user_Find.do?userId=" + userdto.getUserId();
 	}
+	
+	
+	// 사용자 이용권정보 업데이트
+	@RequestMapping(value = "/userUpdate_product.ing", method = RequestMethod.POST)
+	public String userUpdate_product(HttpServletRequest request, HttpServletResponse response, Model model,
+			ShopDTO shopdto) throws Exception {
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		if (shopSer.shopUpdate_product(shopdto) == 1) {
+			System.out.println("유저 상품정보 변경 성공");
+		} else {
+			System.out.println("유저 상품정보 변경 실패");
+		}
+
+		return "redirect:/user_Find.do?userId=" + shopdto.getUserId();
+	}
+	// 사용자 이용권 시간정보 업데이트
+		@RequestMapping(value = "/userUpdate_time.ing", method = RequestMethod.POST)
+		public String userUpdate_time(HttpServletRequest request, HttpServletResponse response, Model model,
+				ShopDTO shopdto,java.sql.Date outTime) throws Exception {
+			response.setContentType("text/html; charset=UTF-8");
+			request.setCharacterEncoding("UTF-8");
+			shopdto.setCheckOutTime(new java.sql.Timestamp(outTime.getTime()));
+			if (shopSer.shopUpdate_time(shopdto) == 1) {
+				System.out.println("유저 상품정보 변경 성공");
+			} else {
+				System.out.println("유저 상품정보 변경 실패");
+			}
+
+			return "redirect:/user_Find.do?userId=" + shopdto.getUserId();
+		}
 	
 }

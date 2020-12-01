@@ -131,9 +131,10 @@
 																		<label>${shop.productNum}</label>
 																	</div>
 																</div>
-																<div class="form-group row">
+																<form class="form-group row" action="userUpdate_product.ing" method="post">
 																	<div class="col-sm-8">
-																		<select name="productNum" id="cars" class="form-control">
+																		<input type="hidden" name="userId" value="${user.userId}">
+																		<select name="productNum" class="form-control">
 																			<option value="0">애곰이</option>
 																			<option value="1">곰곰이</option>
 																			<option value="2">꿀곰이</option>
@@ -145,7 +146,7 @@
 																	<div class="col-sm-4">
 																		<button type="submit" class="btn btn-danger btn-round btn-sm">변경</button>
 																	</div>
-																</div>
+																</form>
 															</div>
 															<div class="col-6">
 																<h4 class="sub-title">남은 기간</h4>
@@ -154,15 +155,16 @@
 																		<label>${shop.checkOutTime} 까지</label>
 																	</div>
 																</div>
-																<div class="form-group row">
+																<form class="form-group row" action="userUpdate_time.ing" method="post">
 																	<div class="col-sm-8">
-																		<input name="checkOutTime" type="date" class="form-control" value="${user.userBirth}">
+																		<input type="hidden" name="userId" value="${user.userId}">
+																		<input name="outTime" type="date" class="form-control" value="${shop.checkOutTime}">
 																	</div>
 																	
 																	<div class="col-sm-4">
 																		<button type="submit" class="btn btn-danger btn-round btn-sm">변경</button>
 																	</div>
-																</div>
+																</form>
 															</div>
 														</div>
 
