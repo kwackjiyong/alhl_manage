@@ -35,7 +35,8 @@
 
 	<update id="userModify" parameterType="UserDTO">
 		UPDATE USERDATA SET
-		userPassword=#{userPassword},userEmail=#{userEmail}
+		userName=#{userName},userBirth=#{userBirth},
+		userGender=#{userGender},userEmail=#{userEmail}
 		WHERE userId=#{userId}
 	</update>
 	

@@ -71,7 +71,6 @@ public class UserDAO {
 	}
 
 	public int userUpdate(UserDTO dto) {
-		dto.setUserPassword(SHA256.getSHA256(dto.getUserPassword()));
 		return mybatis.update("userMapper.userModify", dto);
 	}
 

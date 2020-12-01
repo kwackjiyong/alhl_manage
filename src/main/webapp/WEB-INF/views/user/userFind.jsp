@@ -367,7 +367,7 @@
 	<div class="modal fade" id="customEdit" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
-			<div class="modal-content">
+			<form class="modal-content" action="userUpdate_info.ing" method="post">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">고객 인적사항 수정</h5>
 					<button type="button" class="close" data-dismiss="modal"
@@ -375,50 +375,50 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body" >
 					
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">id</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control">
+							<input name="userId" type="text" class="form-control" value="${user.userId}" readonly="readonly"/>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">사용자명</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control">
+							<input name="userName" type="text" class="form-control" value="${user.userName}">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">생년월일</label>
 						<div class="col-sm-8">
-							<input type="date" class="form-control">
+							<input name="userBirth" type="date" class="form-control" value="${user.userBirth}">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">성별</label>
 						<div class="col-sm-8">
-							<div class="btn-group " role="group" data-toggle="tooltip"
-								data-placement="top" title="" data-original-title=".btn-xlg">
-								<button type="button"
-									class="btn btn-info  waves-effect waves-light">남성</button>
-								<button type="button"
-									class="btn btn-danger  waves-effect waves-light">여성</button>
+							<div class="btn-group btn-group-toggle" data-toggle="buttons">
+								<label class="btn btn-info"> <input type="radio"
+									name="userGender" id="jb-radio-1" value="1"> 남성
+								</label> <label class="btn btn-danger"> <input type="radio"
+									name="userGender" id="jb-radio-2" value="2"> 여성
+								</label>
 							</div>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">이메일</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control">
+							<input name="userEmail" type="text" class="form-control" value="${user.userEmail}">
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-warning" data-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-success">수정</button>
+					<button type="submit" class="btn btn-success">수정</button>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 

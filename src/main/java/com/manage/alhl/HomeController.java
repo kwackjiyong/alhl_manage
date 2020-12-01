@@ -75,7 +75,6 @@ public class HomeController {
 				}
 			}
 			srch_age.add(srch_temp);
-			System.out.println(srch_month);
 		}
 		int today_srchCnt = srchLogSer.SearchLog_Today();
 		

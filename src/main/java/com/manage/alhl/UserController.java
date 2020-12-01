@@ -142,10 +142,17 @@ public class UserController {
 		return "redirect:/index.do";
 	}
 	// 사용자 정보 업데이트
-	@RequestMapping("/userUpdate_info.ing")
+	@RequestMapping(value="/userUpdate_info.ing", method = RequestMethod.POST)
 	public String userUpdate_info(HttpServletRequest request, HttpServletResponse response, Model model, UserDTO userdto) throws Exception{
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		if(userSer.userUpdate(userdto)==1) {
+			System.out.println("유저정보 변경 성공");
+		}else {
+			System.out.println("유저정보 변경 실패");
+		}
 		
-		return "redirect:/index.do";
+		return "redirect:/user_Find.do?userId="+userdto.getUserId();
 	}
 	
 }
