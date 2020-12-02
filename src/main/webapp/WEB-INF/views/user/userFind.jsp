@@ -182,17 +182,21 @@
 														</div>
 													</div>
 													<div class="card-block">
-														<div class="row">
+														<form class="row" action="userUpdate_remark.ing" method="post">
 															<div class="col-6 b-r-default">
 																<h4 class="sub-title">이전 비고란</h4>
 																${user.userRemark}
 															</div>
-															<form  class="col-6" action="userUpdate_remark.ing" method="post">
+															<div  class="col-6" >
 																<input type="hidden" name="userId" value="${user.userId}">
-																<textarea name="userRemark" rows="6" cols="10" class="form-control"></textarea>
+																<textarea name="userRemark" rows="5" cols="10" class="form-control"></textarea>
+																
+															</div>
+															
+															<div class="col-12 text-left">
 																<button type="submit" class="btn btn-success btn-round">입력</button>
-															</form>
-														</div>
+															</div>
+														</form>
 													</div>
 												</div>
 											</div>

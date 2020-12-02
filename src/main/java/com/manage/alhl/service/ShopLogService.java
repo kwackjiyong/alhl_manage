@@ -29,4 +29,14 @@ public class ShopLogService{
 	public int shoplogInsert(ShopLogDTO dto) {
 		return dao.shoplogInsert(dto);
 	}
+
+	// 상품별 월간통계
+	public List<ShopLogDTO> shoplogSelect_month(int productNum) {
+		return dao.shoplogSelect_month(productNum);
+	}
+	
+	// 월간 매출합
+	public ShopLogDTO shoplogSelect_month_sum() {
+		return dao.shoplogSelect_month_sum();
+	}
 }

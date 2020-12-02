@@ -78,7 +78,7 @@
                                                     <i class="ti-search"></i>
                                                         <i class="icofont icofont-ui-v-card bg-c-green card1-icon"></i>
                                                         <span class="text-c-green f-w-600">이용권 매출</span>
-                                                        <h4>5,173,242 won</h4>
+                                                        <h4>${shopSum} 원</h4>
                                                         <div>
                                                             <span class="f-left m-t-10 text-muted">
                                                                 <i class="text-c-green f-16 icofont icofont-tag m-r-10"></i>11/05 12:13에 업데이트 되었습니다.
@@ -150,14 +150,31 @@
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 	<script>
+		var month_a= new Array();	   // 전체값
+		var month_1= new Array();	 
+		var month_2= new Array();	  
+		var month_3= new Array();	 
+		
+		<c:forEach items="${shopMonthData.get(0)}" var="shop"> 
+		month_a.push(${shop.payment});
+		</c:forEach>
+		<c:forEach items="${shopMonthData.get(1)}" var="shop"> 
+			month_1.push(${shop.payment});
+		</c:forEach>
+		<c:forEach items="${shopMonthData.get(2)}" var="shop"> 
+			month_2.push(${shop.payment});
+		</c:forEach>
+		<c:forEach items="${shopMonthData.get(3)}" var="shop"> 
+			month_3.push(${shop.payment});
+		</c:forEach>
 		Highcharts.chart('container1', {
 		
 		    title: {
-		        text: '상품별 월간 매출 '
+		        text: '연간 매출 '
 		    },
 		
 		    subtitle: {
-		        text: '2020/11/05에 업데이트 되었습니다.'
+		        text: '상품별 월별 정렬'
 		    },
 		
 		    yAxis: {
@@ -189,16 +206,16 @@
 		
 		    series: [{
 		        name: 'Total',
-		        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+		        data: month_a
 		    }, {
 		        name: '곰곰이',
-		        data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+		        data: month_1
 		    }, {
 		        name: '꿀곰이',
-		        data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+		        data: month_2
 		    }, {
 		        name: '불곰이',
-		        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+		        data: month_3
 		    }],
 		
 		    responsive: {
@@ -248,11 +265,11 @@
 		Highcharts.chart('container2', {
 			
 		    title: {
-		        text: '월간 검색 수'
+		        text: '연간 검색 수'
 		    },
 		
 		    subtitle: {
-		        text: '연령별로 정렬'
+		        text: '월별 연령별 정렬'
 		    },
 		
 		    yAxis: {
@@ -279,6 +296,7 @@
 		                connectorAllowed: false
 		            },
 		            pointStart: 1
+		            
 		        }
 		    },
 		
