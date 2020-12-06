@@ -19,4 +19,6 @@
 <!-- Style.css -->
 <link rel="stylesheet" type="text/css" href="<c:url value='resources/template/assets/css/style.css'/>">
 <link rel="stylesheet" type="text/css" href="<c:url value='resources/template/assets/css/jquery.mCustomScrollbar.css'/>">
+<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
       

@@ -127,71 +127,27 @@
 											                                        </div>
 											                                        <div class="card-block table-border-style">
 											                                            <div class="table-responsive">
-											                                                <table class="table">
+											                                                <table id="datalist1" width="100%" class="table table-hover" style="text-align: center;">
 											                                                    <thead>
 											                                                        <tr>
-											                                                            <th>#</th>
-											                                                            <th>상품번호</th>
-											                                                            <th>상품명</th>
-											                                                            <th>정상가</th>
-											                                                            <th>할인율</th>
-											                                                            <th>결제액</th>
-											                                                            <th>사용자</th>
-											                                                            <th>결제일</th>
+											                                                            <th width="20%" >#</th>
+											                                                            <th width="20%">상품번호</th>
+											                                                            <th width="20%">결제액</th>
+											                                                            <th width="20%">사용자</th>
+											                                                            <th width="20%">결제일</th>
 											                                                        </tr>
 											                                                    </thead>
 											                                                    <tbody>
-											                                                        <tr>
-											                                                            <th scope="row">1</th>
-											                                                            <th>3</th>
-											                                                            <td>꿀곰이</td>
-											                                                            <td>2000</td>
-											                                                            <td>10</td>
-											                                                            <td>900</td>
-											                                                            <td>rhkrwldyd</td>
-											                                                            <td>2020-11-11</td>
-											                                                        </tr>
-											                                                        <tr>
-											                                                            <th scope="row">2</th>
-											                                                            <th>2</th>
-											                                                            <td>곰곰이</td>
-											                                                            <td>1000</td>
-											                                                            <td>10</td>
-											                                                            <td>900</td>
-											                                                            <td>rhkrwldyd</td>
-											                                                            <td>2020-11-11</td>
-											                                                        </tr>
-											                                                        <tr>
-											                                                            <th scope="row">3</th>
-											                                                            <th>3</th>
-											                                                            <td>꿀곰이</td>
-											                                                            <td>2000</td>
-											                                                            <td>10</td>
-											                                                            <td>900</td>
-											                                                            <td>rhkrwldyd</td>
-											                                                            <td>2020-11-11</td>
-											                                                        </tr>
-											                                                        <tr>
-											                                                            <th scope="row">4</th>
-											                                                            <th>3</th>
-											                                                            <td>꿀곰이</td>
-											                                                            <td>2000</td>
-											                                                            <td>10</td>
-											                                                            <td>900</td>
-											                                                            <td>rhkrwldyd</td>
-											                                                            <td>2020-11-11</td>
-											                                                        </tr>
-											                                                        <tr>
-											                                                            <th scope="row">5</th>
-											                                                            <th>4</th>
-											                                                            <td>불곰이</td>
-											                                                            <td>5000</td>
-											                                                            <td>10</td>
-											                                                            <td>900</td>
-											                                                            <td>rhkrwldyd</td>
-											                                                            <td>2020-11-11</td>
-											                                                        </tr>
-											                                                    </tbody>
+																									<c:forEach items="${sldto}" var="sl">
+																										<tr>
+																											<th>${sl.sLogId}</th>
+																											<th>${sl.productNum}</th>
+																											<td>${sl.payment}</td>
+																											<td>${sl.userId}</td>
+																											<td>${sl.logDate}</td>
+																										</tr>
+																									</c:forEach>
+																								</tbody>
 											                                                </table>
 											                                            </div>
 											                                        </div>
@@ -203,17 +159,142 @@
 																		
                                                                     </div>
                                                                     <div class="tab-pane" id="profile7" role="tabpanel">
-                                                                        <div class="col-lg-12 col-xl-6">
-																			<div class="card widget-card-1"  id="container1">
-												
+                                                                        <div class="row">
+                                                                    		<div class="col-lg-12 col-xl-6">
+																				<div class="card"  id="container2">
+													
+																				</div>
 																			</div>
-																		</div>
+																			<div class="col-lg-12 col-xl-6">
+																				<div class="card">
+																					<div class="card-header">
+											                                            <h5>상품 결제 내역</h5>
+											                                            <div class="card-header-right">    <ul class="list-unstyled card-option">        <li><i class="icofont icofont-simple-left "></i></li>        <li><i class="icofont icofont-maximize full-card"></i></li>       </ul></div>
+											                                        </div>
+											                                        <div class="card-block table-border-style">
+											                                            <div class="table-responsive">
+											                                                <table id="datalist2"  width="100%" class="table table-hover" style="text-align: center;">
+											                                                    <thead>
+											                                                        <tr>
+											                                                            <th width="20%" >#</th>
+											                                                            <th width="20%">상품번호</th>
+											                                                            <th width="20%">결제액</th>
+											                                                            <th width="20%">사용자</th>
+											                                                            <th width="20%">결제일</th>
+											                                                        </tr>
+											                                                    </thead>
+											                                                    <tbody>
+																									<c:forEach items="${sldto}" var="sl">
+																										<tr>
+																											<th>${sl.sLogId}</th>
+																											<th>${sl.productNum}</th>
+																											<td>${sl.payment}</td>
+																											<td>${sl.userId}</td>
+																											<td>${sl.logDate}</td>
+																										</tr>
+																									</c:forEach>
+																								</tbody>
+											                                                </table>
+											                                            </div>
+											                                        </div>
+																				</div>
+																			</div>
+                                                                    	
+                                                                    	</div>
                                                                     </div>
                                                                     <div class="tab-pane" id="messages7" role="tabpanel">
-                                                                        <p class="m-0">3. This is Photoshop's version of Lorem IpThis is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean mas Cum sociis natoque penatibus et magnis dis.....</p>
+                                                                        <div class="row">
+                                                                    		<div class="col-lg-12 col-xl-6">
+																				<div class="card"  id="container3">
+													
+																				</div>
+																			</div>
+																			<div class="col-lg-12 col-xl-6">
+																				<div class="card">
+																					<div class="card-header">
+											                                            <h5>검색 내역</h5>
+											                                            <div class="card-header-right">    <ul class="list-unstyled card-option">        <li><i class="icofont icofont-simple-left "></i></li>        <li><i class="icofont icofont-maximize full-card"></i></li>       </ul></div>
+											                                        </div>
+											                                        <div class="card-block table-border-style">
+											                                            <div class="table-responsive">
+											                                                <table id="datalist3" width="100%" class="table table-hover" style="text-align: center;">
+											                                                    <thead>
+											                                                        <tr>
+											                                                            <th width="25%" >#</th>
+											                                                            <th width="25%">사용자id</th>
+											                                                            <th width="25%">검색어</th>
+											                                                            <th width="25%">검색일</th>
+											                                                        </tr>
+											                                                    </thead>
+											                                                    <tbody>
+																									<c:forEach items="${srchdto}" var="sl">
+																										<tr>
+																											<th>${sl.srchId}</th>
+																											<td>${sl.userId}</td>
+																											<td>${sl.srchWord}</td>
+																											<td>${sl.srchTime}</td>
+																										</tr>
+																									</c:forEach>
+																								</tbody>
+											                                                </table>
+											                                            </div>
+											                                        </div>
+																				</div>
+																			</div>
+                                                                    	
+                                                                    	</div>
                                                                     </div>
                                                                     <div class="tab-pane" id="settings7" role="tabpanel">
-                                                                        <p class="m-0">4.Cras consequat in enim ut efficitur. Nulla posuere elit quis auctor interdum praesent sit amet nulla vel enim amet. Donec convallis tellus neque, et imperdiet felis amet.</p>
+                                                                    	<div class="row">
+                                                                    		<div class="col-lg-12 col-xl-6">
+																				<div class="card"  id="container4">
+													
+																				</div>
+																			</div>
+																			<div class="col-lg-12 col-xl-6">
+																				<div class="card">
+																					<div class="card-header">
+											                                            <h5>사용자 내역</h5>
+											                                            <div class="card-header-right">    <ul class="list-unstyled card-option">        <li><i class="icofont icofont-simple-left "></i></li>        <li><i class="icofont icofont-maximize full-card"></i></li>       </ul></div>
+											                                        </div>
+											                                        <div class="card-block table-border-style">
+											                                            <div class="table-responsive">
+											                                                <table id="datalist4"  width="100%" class="table table-hover" style="text-align: center;">
+											                                                    <thead>
+											                                                        <tr>
+											                                                            <th width="20%">사용자id</th>
+											                                                            <th width="20%">사용자명</th>
+											                                                            <th width="20%">생년월일</th>
+											                                                            <th width="20%">성별</th>
+											                                                            <th width="20%">이메일</th>
+											                                                            <th width="20%">이메일확인여부</th>
+											                                                            <th width="20%">사용자권한</th>
+											                                                            <th width="20%">CASH</th>
+											                                                            <th width="20%">가입일</th>
+											                                                        </tr>
+											                                                    </thead>
+											                                                    <tbody>
+																									<c:forEach items="${userdto}" var="user">
+																										<tr>
+																											<th>${user.userId}</th>
+																											<th>${user.userName}</th>
+																											<td>${user.userBirth}</td>
+																											<td>${user.userGender}</td>
+																											<td>${user.userEmail}</td>
+																											<td>${user.userEmailCertified}</td>
+																											<td>${user.userAuthority}</td>
+																											<td>${user.cash}</td>
+																											<td>${user.creatTime}</td>
+																										</tr>
+																									</c:forEach>
+																								</tbody>
+											                                                </table>
+											                                            </div>
+											                                        </div>
+																				</div>
+																			</div>
+                                                                    	
+                                                                    	</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -245,75 +326,463 @@
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 	<script>
-		Highcharts.chart('container1', {
-		
-		    title: {
-		        text: '상품별 월간 매출 '
-		    },
-		
-		    subtitle: {
-		        text: '2020/11/05에 업데이트 되었습니다.'
-		    },
-		
-		    yAxis: {
-		        title: {
-		            text: 'Won'
-		        }
-		    },
-		
-		    xAxis: {
-		        accessibility: {
-		            rangeDescription: 'Range: 1 to 12'
-		        }
-		    },
-		
-		    legend: {
-		        layout: 'vertical',
-		        align: 'right',
-		        verticalAlign: 'middle'
-		    },
-		
-		    plotOptions: {
-		        series: {
-		            label: {
-		                connectorAllowed: false
-		            },
-		            pointStart: 1
-		        }
-		    },
-		
-		    series: [{
-		        name: 'Total',
-		        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-		    }, {
-		        name: '곰곰이',
-		        data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-		    }, {
-		        name: '꿀곰이',
-		        data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-		    }, {
-		        name: '불곰이',
-		        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-		    }],
-		
-		    responsive: {
-		        rules: [{
-		            condition: {
-		                maxWidth: 300
-		            },
-		            chartOptions: {
-		                legend: {
-		                    layout: 'horizontal',
-		                    align: 'center',
-		                    verticalAlign: 'bottom'
-		                }
-		            }
-		        }]
-		    }
-		
+	$(document).ready(function() {
+		$('#datalist1').DataTable({
+			"lengthMenu" : [ 5, 10, 25, 50, 100 ],
+			"scrollY" : 600,
+			"scrollCollapse" : true,
+			"pagingType" : "full_numbers",
+			"language" : {
+				search : "리스트 내 검색 : ",
+				"info" : "총 _PAGES_ 페이지 중 _PAGE_ 페이지 ",
+				"infoEmpty" : "검색 결과가 없습니다.",
+				"infoFiltered" : " ( _MAX_개의 검색결과 중)",
+				"lengthMenu" : "_MENU_ 개씩 보기",
+				"paginate" : {
+					"first" : "처음",
+					"last" : "마지막",
+					"next" : "다음",
+					"previous" : "이전"
+				}
+
+			}
 		});
-	</script>
+		$('#datalist2').DataTable({
+			"lengthMenu" : [ 5, 10, 25, 50, 100 ],
+			"scrollY" : 600,
+			"scrollCollapse" : true,
+			"pagingType" : "full_numbers",
+			"language" : {
+				search : "리스트 내 검색 : ",
+				"info" : "총 _PAGES_ 페이지 중 _PAGE_ 페이지 ",
+				"infoEmpty" : "검색 결과가 없습니다.",
+				"infoFiltered" : " ( _MAX_개의 검색결과 중)",
+				"lengthMenu" : "_MENU_ 개씩 보기",
+				"paginate" : {
+					"first" : "처음",
+					"last" : "마지막",
+					"next" : "다음",
+					"previous" : "이전"
+				}
+
+			}
+		});
+		$('#datalist3').DataTable({
+			"lengthMenu" : [ 5, 10, 25, 50, 100 ],
+			"scrollY" : 600,
+			"scrollCollapse" : true,
+			"pagingType" : "full_numbers",
+			"language" : {
+				search : "리스트 내 검색 : ",
+				"info" : "총 _PAGES_ 페이지 중 _PAGE_ 페이지 ",
+				"infoEmpty" : "검색 결과가 없습니다.",
+				"infoFiltered" : " ( _MAX_개의 검색결과 중)",
+				"lengthMenu" : "_MENU_ 개씩 보기",
+				"paginate" : {
+					"first" : "처음",
+					"last" : "마지막",
+					"next" : "다음",
+					"previous" : "이전"
+				}
+
+			}
+		});
+		$('#datalist4').DataTable({
+			"lengthMenu" : [ 5, 10, 25, 50, 100 ],
+			"scrollY" : 600,
+			"scrollCollapse" : true,
+			"pagingType" : "full_numbers",
+			"language" : {
+				search : "리스트 내 검색 : ",
+				"info" : "총 _PAGES_ 페이지 중 _PAGE_ 페이지 ",
+				"infoEmpty" : "검색 결과가 없습니다.",
+				"infoFiltered" : " ( _MAX_개의 검색결과 중)",
+				"lengthMenu" : "_MENU_ 개씩 보기",
+				"paginate" : {
+					"first" : "처음",
+					"last" : "마지막",
+					"next" : "다음",
+					"previous" : "이전"
+				}
+
+			}
+		});
+	});
 	
+	//상품별 월별 매출 통계
+	var month_a= new Array();	   // 전체값
+	var month_1= new Array();	 
+	var month_2= new Array();	  
+	var month_3= new Array();	 
+	
+	<c:forEach items="${shopMonthData_sum.get(0)}" var="shop"> 
+	month_a.push(${shop.payment});
+	</c:forEach>
+	<c:forEach items="${shopMonthData_sum.get(1)}" var="shop"> 
+		month_1.push(${shop.payment});
+	</c:forEach>
+	<c:forEach items="${shopMonthData_sum.get(2)}" var="shop"> 
+		month_2.push(${shop.payment});
+	</c:forEach>
+	<c:forEach items="${shopMonthData_sum.get(3)}" var="shop"> 
+		month_3.push(${shop.payment});
+	</c:forEach>
+	Highcharts.chart('container1', {
+	
+	    title: {
+	        text: '연간 매출 '
+	    },
+	
+	    subtitle: {
+	        text: '상품별 월별 정렬'
+	    },
+	
+	    yAxis: {
+	        title: {
+	            text: 'Won'
+	        }
+	    },
+	
+	    xAxis: {
+	        accessibility: {
+	            rangeDescription: 'Range: 1 to 12'
+	        }
+	    },
+	
+	    legend: {
+	        layout: 'vertical',
+	        align: 'right',
+	        verticalAlign: 'middle'
+	    },
+	
+	    plotOptions: {
+	        series: {
+	            label: {
+	                connectorAllowed: false
+	            },
+	            pointStart: 1
+	        }
+	    },
+	
+	    series: [{
+	        name: 'Total',
+	        data: month_a
+	    }, {
+	        name: '곰곰이',
+	        data: month_1
+	    }, {
+	        name: '꿀곰이',
+	        data: month_2
+	    }, {
+	        name: '불곰이',
+	        data: month_3
+	    }],
+	
+	    responsive: {
+	        rules: [{
+	            condition: {
+	                maxWidth: 300
+	            },
+	            chartOptions: {
+	                legend: {
+	                    layout: 'horizontal',
+	                    align: 'center',
+	                    verticalAlign: 'bottom'
+	                }
+	            }
+	        }]
+	    }
+	
+	});
+	//상품별 월별 이용권 통계
+	var month_a= new Array();	   // 전체값
+	var month_1= new Array();	 
+	var month_2= new Array();	  
+	var month_3= new Array();	 
+	
+	<c:forEach items="${shopMonthData_cnt.get(0)}" var="shop"> 
+	month_a.push(${shop.payment});
+	</c:forEach>
+	<c:forEach items="${shopMonthData_cnt.get(1)}" var="shop"> 
+		month_1.push(${shop.payment});
+	</c:forEach>
+	<c:forEach items="${shopMonthData_cnt.get(2)}" var="shop"> 
+		month_2.push(${shop.payment});
+	</c:forEach>
+	<c:forEach items="${shopMonthData_cnt.get(3)}" var="shop"> 
+		month_3.push(${shop.payment});
+	</c:forEach>
+	Highcharts.chart('container2', {
+	
+	    title: {
+	        text: '연간 이용권 판매수'
+	    },
+	
+	    subtitle: {
+	        text: '상품별 월별 정렬'
+	    },
+	
+	    yAxis: {
+	        title: {
+	            text: 'Won'
+	        }
+	    },
+	
+	    xAxis: {
+	        accessibility: {
+	            rangeDescription: 'Range: 1 to 12'
+	        }
+	    },
+	
+	    legend: {
+	        layout: 'vertical',
+	        align: 'right',
+	        verticalAlign: 'middle'
+	    },
+	
+	    plotOptions: {
+	        series: {
+	            label: {
+	                connectorAllowed: false
+	            },
+	            pointStart: 1
+	        }
+	    },
+	
+	    series: [{
+	        name: 'Total',
+	        data: month_a
+	    }, {
+	        name: '곰곰이',
+	        data: month_1
+	    }, {
+	        name: '꿀곰이',
+	        data: month_2
+	    }, {
+	        name: '불곰이',
+	        data: month_3
+	    }],
+	
+	    responsive: {
+	        rules: [{
+	            condition: {
+	                maxWidth: 300
+	            },
+	            chartOptions: {
+	                legend: {
+	                    layout: 'horizontal',
+	                    align: 'center',
+	                    verticalAlign: 'bottom'
+	                }
+	            }
+	        }]
+	    }
+	
+	});
+	
+	//연령별 월별 검색 통계
+	var month_all= new Array();	   // 전체값
+	var month_10= new Array();	 
+	var month_20= new Array();	  
+	var month_30= new Array();	  
+	var month_40= new Array();	  
+	var month_50= new Array();	   
+	<c:forEach items="${srchMonthData.get(0)}" var="mon"> 
+		month_all.push(${mon.srchId});
+	</c:forEach>
+	<c:forEach items="${srchMonthData.get(1)}" var="mon"> 
+		month_10.push(${mon.srchId});
+	</c:forEach>
+	<c:forEach items="${srchMonthData.get(2)}" var="mon"> 
+		month_20.push(${mon.srchId});
+	</c:forEach>
+	<c:forEach items="${srchMonthData.get(3)}" var="mon"> 
+		month_30.push(${mon.srchId});
+	</c:forEach>
+	<c:forEach items="${srchMonthData.get(4)}" var="mon"> 
+		month_40.push(${mon.srchId});
+	</c:forEach>
+	<c:forEach items="${srchMonthData.get(5)}" var="mon">
+		month_50.push(${mon.srchId});
+	</c:forEach>
+	
+	Highcharts.chart('container3', {
+		
+	    title: {
+	        text: '연간 검색 수'
+	    },
+	
+	    subtitle: {
+	        text: '월별 연령별 정렬'
+	    },
+	
+	    yAxis: {
+	        title: {
+	            text: 'Count'
+	        }
+	    },
+	
+	    xAxis: {
+	        accessibility: {
+	            rangeDescription: 'Range: 1 to 12'
+	        }
+	    },
+	
+	    legend: {
+	        layout: 'vertical',
+	        align: 'right',
+	        verticalAlign: 'middle'
+	    },
+	
+	    plotOptions: {
+	        series: {
+	            label: {
+	                connectorAllowed: false
+	            },
+	            pointStart: 1
+	            
+	        }
+	    },
+	
+	    series: [{
+	        name: 'Total',
+	        data: month_all
+	    }, {
+	        name: '10대',
+	        data: month_10
+	    }, { 
+	        name: '20대',
+	        data: month_20
+	    }, {
+	        name: '30대',
+	        data: month_30
+	    }, {
+	        name: '40대',
+	        data: month_40
+	    }, {
+	        name: '50대이상',
+	        data: month_50
+	    }],
+	
+	    responsive: {
+	        rules: [{
+	            condition: {
+	                maxWidth: 300
+	            },
+	            chartOptions: {
+	                legend: {
+	                    layout: 'horizontal',
+	                    align: 'center',
+	                    verticalAlign: 'bottom'
+	                }
+	            }
+	        }]
+	    }
+	
+	});
+	
+	
+	//연령별 월별 사용자 가입수 통계
+	var month_all= new Array();	   // 전체값
+	var month_10= new Array();	 
+	var month_20= new Array();	  
+	var month_30= new Array();	  
+	var month_40= new Array();	  
+	var month_50= new Array();	   
+	<c:forEach items="${userMonthData.get(0)}" var="mon"> 
+		month_all.push(${mon.cash});
+	</c:forEach>
+	<c:forEach items="${userMonthData.get(1)}" var="mon"> 
+		month_10.push(${mon.cash});
+	</c:forEach>
+	<c:forEach items="${userMonthData.get(2)}" var="mon"> 
+		month_20.push(${mon.cash});
+	</c:forEach>
+	<c:forEach items="${userMonthData.get(3)}" var="mon"> 
+		month_30.push(${mon.cash});
+	</c:forEach>
+	<c:forEach items="${userMonthData.get(4)}" var="mon"> 
+		month_40.push(${mon.cash});
+	</c:forEach>
+	<c:forEach items="${userMonthData.get(5)}" var="mon">
+		month_50.push(${mon.cash});
+	</c:forEach>
+	
+	Highcharts.chart('container4', {
+		
+	    title: {
+	        text: '연간 가입자 수'
+	    },
+	
+	    subtitle: {
+	        text: '월별 연령별 정렬'
+	    },
+	
+	    yAxis: {
+	        title: {
+	            text: 'Count'
+	        }
+	    },
+	
+	    xAxis: {
+	        accessibility: {
+	            rangeDescription: 'Range: 1 to 12'
+	        }
+	    },
+	
+	    legend: {
+	        layout: 'vertical',
+	        align: 'right',
+	        verticalAlign: 'middle'
+	    },
+	
+	    plotOptions: {
+	        series: {
+	            label: {
+	                connectorAllowed: false
+	            },
+	            pointStart: 1
+	            
+	        }
+	    },
+	
+	    series: [{
+	        name: 'Total',
+	        data: month_all
+	    }, {
+	        name: '10대',
+	        data: month_10
+	    }, { 
+	        name: '20대',
+	        data: month_20
+	    }, {
+	        name: '30대',
+	        data: month_30
+	    }, {
+	        name: '40대',
+	        data: month_40
+	    }, {
+	        name: '50대이상',
+	        data: month_50
+	    }],
+	
+	    responsive: {
+	        rules: [{
+	            condition: {
+	                maxWidth: 300
+	            },
+	            chartOptions: {
+	                legend: {
+	                    layout: 'horizontal',
+	                    align: 'center',
+	                    verticalAlign: 'bottom'
+	                }
+	            }
+	        }]
+	    }
+	
+	});
+	</script>
 	<!------------ Javascript END ------------>
 </body>
 </html>

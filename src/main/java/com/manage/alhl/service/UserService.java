@@ -20,10 +20,21 @@ public class UserService{
 	public List<UserDTO> userSelect(UserDTO dto) {
 		return dao.userSelect(dto);
 	}
+
+	// 사용자 전체 내역
+	public List<UserDTO> userSelect() {
+		return dao.userSelect();
+	}
+	public List<UserDTO> userSelect_month_age(int years) {
+		// TODO Auto-generated method stub
+		return dao.userSelect_month_age(years);
+	}
 	public int userCountToday() {
 		// TODO Auto-generated method stub
 		return dao.userCountToday();
 	}
+	
+	
 	public UserDTO userSelectFind(UserDTO dto) {
 		// TODO Auto-generated method stub
 		return dao.userSelectFind(dto);

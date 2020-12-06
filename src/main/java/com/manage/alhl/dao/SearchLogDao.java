@@ -16,6 +16,12 @@ public class SearchLogDao {
 	// 컨테이너가 객체를 자동으로 생성 Autowired
 	@Autowired
 	public SqlSessionTemplate mybatis;
+	
+	// 검색로그내역
+	public List<SearchLogDTO> SearchLogSelect() {
+		return mybatis.selectList("searchLogMapper.SearchLogSelect");
+	}
+	
 	//월별 횟수 통계
 	public List<SearchLogDTO> SearchLog_Month(int years){
 		return mybatis.selectList("searchLogMapper.SearchLog_Month",years);

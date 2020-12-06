@@ -18,6 +18,9 @@ public class SearchLogService{
 	@Autowired
 	public SearchLogDao dao;
 	
+	public List<SearchLogDTO> SearchLogSelect(){
+		return dao.SearchLogSelect();
+	}
 	public List<SearchLogDTO> SearchLog_Month(int years){
 		return dao.SearchLog_Month(years);
 	}

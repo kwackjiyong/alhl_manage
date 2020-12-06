@@ -6,7 +6,7 @@
 <mapper namespace="shoplogMapper">
 	<!-- 전체 구매내역 -->
 	<select id="shoplogSelect" resultType="ShopLogDTO">
-		SELECT * FROM Shop_Log
+		SELECT * FROM Shop_Log order by sLogId desc;
 	</select>
 
 	<!-- 사용자 구매내역 -->
@@ -22,8 +22,8 @@
 		(#{userId}, #{productNum},#{reCount})
 	</insert>
 	
-	<!-- 상품별 월간통계 -->
-	<select id="shoplogSelect_month" parameterType="int"  resultType="ShopLogDTO">
+	<!-- 상품별 월간매출통계 -->
+	<select id="shoplogSelect_month_sum" parameterType="int"  resultType="ShopLogDTO">
 		SELECT DATE_FORMAT(logDate,'%m') as userId, sum(payment) as payment
 		FROM shop_log
 		WHERE YEAR(logDate) = YEAR(SYSDATE())
@@ -32,8 +32,20 @@
 		</if>
 		GROUP BY DATE_FORMAT(logDate,'%m')
 	</select>
-	<!-- 매출 월간통계 -->
-	<select id="shoplogSelect_month_sum" resultType="ShopLogDTO">
+	
+	<!-- 상품별 월간이용권통계 -->
+	<select id="shoplogSelect_month_count" parameterType="int"  resultType="ShopLogDTO">
+		SELECT DATE_FORMAT(logDate,'%m') as userId, count(payment) as payment
+		FROM shop_log
+		WHERE YEAR(logDate) = YEAR(SYSDATE())
+		<if test="productNum != 0">
+			AND productNum = #{productNum}
+		</if>
+		GROUP BY DATE_FORMAT(logDate,'%m')
+	</select>
+	
+	<!-- 매출 월간합 -->
+	<select id="shoplog_month_sum" resultType="ShopLogDTO">
 		SELECT sum(payment) as payment
 		FROM shop_log
 		WHERE DATE_FORMAT(logDate,'%Y%m') = DATE_FORMAT(SYSDATE(),'%Y%m')

@@ -6,9 +6,21 @@
 <mapper namespace="userMapper">
 	<!-- 아래부터 내가만든 -->
 	<select id="userSelectALL" resultType="UserDTO">
-		SELECT * FROM USERDATA
+		SELECT * FROM USERDATA order by creatTime desc
 	</select>
-
+	<!--연간 사용자 통계 _ 연령별 _ 월별 -->
+	<select id="userSelect_month_age" parameterType="int" resultType="UserDTO">
+		SELECT
+		DATE_FORMAT(creatTime,'%m')as userName, COUNT(*)as cash
+		FROM userdata
+		WHERE YEAR(creatTime) = YEAR(SYSDATE())
+		<if test="years != 0">
+		AND CONVERT ( ((YEAR(SYSDATE())-YEAR(userBirth))/10) , SIGNED INTEGER )=#{years}
+		</if>
+		GROUP BY DATE_FORMAT(creatTime,'%m')
+	</select>
+	
+	
 	<select resultType="UserDTO" parameterType="UserDTO"
 		id="userSelectAll">SELECT * FROM USERDATA</select>
 	

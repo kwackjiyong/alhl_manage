@@ -4,6 +4,14 @@
 <!-- [DB연결 사용법] 1. SQL문 작성 하고 다음과 같은 양식으로 만들어준다. -->
 <!-- sql문 작성 -->
 <mapper namespace="searchLogMapper">
+
+	<select id="SearchLogSelect" resultType="SearchLogDTO">
+		SELECT * FROM searchlog 
+		order by srchId 
+		desc
+	</select>
+	
+	
 	<!-- 통계 -->
 	<select id="SearchLog_Month" parameterType="int" resultType="SearchLogDTO">
 		SELECT DATE_FORMAT(srchTime,'%m') as srchWord, count(*) as srchId

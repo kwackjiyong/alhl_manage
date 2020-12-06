@@ -77,7 +77,7 @@
                                                     <div class="card-block-small">
                                                     <i class="ti-search"></i>
                                                         <i class="icofont icofont-ui-v-card bg-c-green card1-icon"></i>
-                                                        <span class="text-c-green f-w-600">이용권 매출</span>
+                                                        <span class="text-c-green f-w-600">이용권 월매출</span>
                                                         <h4>${shopSum} 원</h4>
                                                         <div>
                                                             <span class="f-left m-t-10 text-muted">

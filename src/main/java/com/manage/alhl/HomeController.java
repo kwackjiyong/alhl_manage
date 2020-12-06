@@ -88,7 +88,7 @@ public class HomeController {
 		shop_zero.setPayment(0);
 		shop_zero.setUserId("zero");
 		for(int i=0;i<4;i++) {
-			List<ShopLogDTO> shop_month = shopLogSer.shoplogSelect_month(i);
+			List<ShopLogDTO> shop_month = shopLogSer.shoplogSelect_month_sum(i);
 			List<ShopLogDTO> shop_temp = new ArrayList<ShopLogDTO>();
 			
 			for(int j=0;j<12;j++) {
@@ -107,7 +107,7 @@ public class HomeController {
 		}
 		
 		
-		model.addAttribute("shopSum", month_shopSum); //월간 매출합
+		model.addAttribute("shopSum", String.format("%,d", month_shopSum)); //월간 매출합
 		model.addAttribute("userCnt", today_userCnt); //일간 가입자수
 		model.addAttribute("srchCnt", today_srchCnt); //일간 검색수
 		model.addAttribute("srchMonthData",srch_age); //연간 월별 검색통계

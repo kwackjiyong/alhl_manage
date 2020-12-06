@@ -26,6 +26,19 @@ public class UserDAO {
 		// TODO Auto-generated method stub
 		return mybatis.selectOne("userMapper.userSelectToday");
 	}
+
+	//월별 연령별 통계
+	public List<UserDTO> userSelect_month_age(int years) {
+		// TODO Auto-generated method stub
+		return mybatis.selectList("userMapper.userSelect_month_age", years);
+	}
+	//사용자 전체 내역 
+	public List<UserDTO> userSelect() {
+		// TODO Auto-generated method stub
+		
+		return mybatis.selectList("userMapper.userSelectALL");
+	}
+	
 	
 	//로그인시 사용
 	public UserDTO userSelectOne(UserDTO dto) {

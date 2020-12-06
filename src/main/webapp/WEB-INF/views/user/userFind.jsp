@@ -262,7 +262,7 @@
 																				<c:if test="${1 != listPageNum}">
 																					<button type="button"
 																						class="btn btn-primary btn-sm"
-																						onclick="javascript:location.href='userFind.do?pageNum=1&&userId=${user.userId}';">처음</button>
+																						onclick="javascript:location.href='user_Find.do?pageNum=1&&userId=${user.userId}';">처음</button>
 																					<button type="button"
 																						class="btn btn-primary btn-sm"
 																						onclick="javascript:location.href='user_Find.do?pageNum=${listPageNum-1}&&userId=${user.userId}';">이전</button>

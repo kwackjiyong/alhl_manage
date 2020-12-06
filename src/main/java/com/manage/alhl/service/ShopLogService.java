@@ -20,8 +20,8 @@ public class ShopLogService{
 	
 	@Autowired
 	public ShopLogDao dao;
-	public List<ShopLogDTO> shopSelect(UserDTO dto) {
-		return dao.shopSelect(dto);
+	public List<ShopLogDTO> shopSelect() {
+		return dao.shopSelect();
 	}
 	public List<ShopLogDTO> shopSelect_user(UserDTO dto) {
 		return dao.shopSelect_user(dto);
@@ -30,11 +30,15 @@ public class ShopLogService{
 		return dao.shoplogInsert(dto);
 	}
 
-	// 상품별 월간통계
-	public List<ShopLogDTO> shoplogSelect_month(int productNum) {
-		return dao.shoplogSelect_month(productNum);
+	// 상품별 월간매출통계
+	public List<ShopLogDTO> shoplogSelect_month_sum(int productNum) {
+		return dao.shoplogSelect_month_sum(productNum);
 	}
-	
+
+	// 상품별 월간이용권통계
+	public List<ShopLogDTO> shoplogSelect_month_count(int productNum) {
+		return dao.shoplogSelect_month_count(productNum);
+	}
 	// 월간 매출합
 	public ShopLogDTO shoplogSelect_month_sum() {
 		return dao.shoplogSelect_month_sum();
