@@ -329,8 +329,6 @@
 	$(document).ready(function() {
 		$('#datalist1').DataTable({
 			"lengthMenu" : [ 5, 10, 25, 50, 100 ],
-			"scrollY" : 600,
-			"scrollCollapse" : true,
 			"pagingType" : "full_numbers",
 			"language" : {
 				search : "리스트 내 검색 : ",
@@ -349,8 +347,6 @@
 		});
 		$('#datalist2').DataTable({
 			"lengthMenu" : [ 5, 10, 25, 50, 100 ],
-			"scrollY" : 600,
-			"scrollCollapse" : true,
 			"pagingType" : "full_numbers",
 			"language" : {
 				search : "리스트 내 검색 : ",
@@ -369,8 +365,6 @@
 		});
 		$('#datalist3').DataTable({
 			"lengthMenu" : [ 5, 10, 25, 50, 100 ],
-			"scrollY" : 600,
-			"scrollCollapse" : true,
 			"pagingType" : "full_numbers",
 			"language" : {
 				search : "리스트 내 검색 : ",
@@ -389,8 +383,6 @@
 		});
 		$('#datalist4').DataTable({
 			"lengthMenu" : [ 5, 10, 25, 50, 100 ],
-			"scrollY" : 600,
-			"scrollCollapse" : true,
 			"pagingType" : "full_numbers",
 			"language" : {
 				search : "리스트 내 검색 : ",
