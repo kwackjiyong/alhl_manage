@@ -68,6 +68,7 @@
 																	<thead>
 																		<tr>
 																			<th>#</th>
+																			<th>이벤트명</th>
 																			<th>시행 관리자id</th>
 																			<th>혜택대상</th>
 																			<th>정량</th>
@@ -79,19 +80,20 @@
 																		</tr>
 																	</thead>
 																	<tbody>
-																		<%-- <c:forEach> --%>
+																		<c:forEach items="${eventlist}" var="list">
 																		<tr data-toggle="modal" data-target="#btnRow">
-																			<th scope="row">1</th>
-																			<td>1</td>
-																			<td>2</td>
-																			<td>@3</td>
-																			<td>@4</td>
-																			<td>@5</td>
-																			<td>@6</td>
-																			<td>@7</td>
+																			<th>${list.eventId}</th>
+																			<td>${list.eventName}</td>
+																			<td>${list.adminId}</td>
+																			<td>${list.productNum}</td>
+																			<td>${list.eventSize}</td>
+																			<td>${list.eventKind}</td>
+																			<td>${list.startDate}</td>
+																			<td>${list.finishDate}</td>
+																			<td>${list.reserDate}</td>
 																			<td><button class="btn btn-danger btn-round">중지</button></td>
 																		</tr>
-																		
+																		</c:forEach>
 																	</tbody>
 																</table>
 															</div>
@@ -117,7 +119,7 @@
 	<div class="modal fade" id="btnEventAdd" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
-			<div class="modal-content">
+			<form class="modal-content" action="eventInsert.ing" method="post">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">이벤트 추가</h5>
 					<button type="button" class="close" data-dismiss="modal"
@@ -129,37 +131,53 @@
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">이벤트 종류</label>
 						<div class="col-sm-8">
-							<select name="cars" id="cars" class = "form-control">
-									<option value="volvo">횟수혜택</option>
-									<option value="saab">할인 %</option>
+							<select name="eventKind" class = "form-control">
+									<option value="횟수">횟수혜택</option>
+									<option value="할인">할인 %</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label">이벤트명</label>
+						<div class="col-sm-8">
+							<input name="eventName" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label">혜택 제품</label>
+						<div class="col-sm-8">
+							<select name="productNum" class = "form-control">
+									<option value="1">곰곰이</option>
+									<option value="2">꿀곰이</option>
+									<option value="3">불곰이</option>
 							</select>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">수량</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control">
+							<input name="eventSize" type="text" class="form-control">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">이벤트 시작</label>
+						<label class="col-sm-4 col-form-label">이벤트 시작일</label>
 						<div class="col-sm-8">
-							<input type="date" class="form-control">
+							<input name="startTime" type="date" class="form-control">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">이벤트 종료</label>
+						<label class="col-sm-4 col-form-label">이벤트 종료일</label>
 						<div class="col-sm-8">
-							<input type="date" class="form-control">
+							<input name="finishTime" type="date" class="form-control">
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-warning"
 						data-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-success">추가</button>
+					<button type="submit" class="btn btn-success">추가</button>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 	
