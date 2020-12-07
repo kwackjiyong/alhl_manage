@@ -4,7 +4,6 @@
 <!-- [DB연결 사용법] 1. SQL문 작성 하고 다음과 같은 양식으로 만들어준다. -->
 <!-- sql문 작성 -->
 <mapper namespace="userMapper">
-	<!-- 아래부터 내가만든 -->
 	<select id="userSelectALL" resultType="UserDTO">
 		SELECT * FROM USERDATA order by creatTime desc
 	</select>
@@ -31,9 +30,9 @@
 	
 	<select id="userSelectIf"  resultType="UserDTO" parameterType="UserDTO">
 	SELECT * FROM USERDATA
-	WHERE 1=1 
 	<if test="userId != ''">
-		AND userId like CONCAT('%',#{userId},'%')
+	WHERE userId like CONCAT('%',#{userId},'%') 
+	OR userName like CONCAT('%',#{userId},'%')
 	</if>
 	</select>
 	

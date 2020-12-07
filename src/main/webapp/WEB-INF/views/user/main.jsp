@@ -58,17 +58,10 @@
 														</div>
 														<div class="card-header-right">
 															<div class="row">
-																<form class="col-sm-7 row" action="manage_user.do">
+																<form class="col-sm-12 row" action="manage_user.do">
 																	<input name="userId" type="search" class="form-control col-sm-8" />
 																	<button type="submit" class ="btn btn-primary btn-sm col-sm-4" >검색</button>
 																</form>
-
-																<div class="col-sm-5">
-																	<select name="cars" id="cars" class="form-control">
-																		<option value="volvo">20개 보기</option>
-																		<option value="saab">50개 보기</option>
-																	</select>
-																</div>
 															</div>
 															
 														</div>

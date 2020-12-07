@@ -23,10 +23,10 @@
 		</div>
 		<div class="pcoded-search">
 			<span class="searchbar-toggle"> </span>
-			<div class="pcoded-search-box ">
-				<input type="text" placeholder="Search"> <span
+			<form class="pcoded-search-box " action="manage_user.do">
+				<input name="userId" type="text" placeholder="Search"> <span
 					class="search-icon"><i class="ti-search" aria-hidden="true"></i></span>
-			</div>
+			</form>
 		</div>
 		<ul class="pcoded-item pcoded-left-item">
 			<li><a href="manage_user.do"> <span class="pcoded-micon"><i
