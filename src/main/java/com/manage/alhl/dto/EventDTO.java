@@ -3,15 +3,15 @@ package com.manage.alhl.dto;
 import java.sql.Timestamp;
 
 public class EventDTO {
-	private int eventId;
-	private String eventName;
-	private String adminId;
-	private int productNum;
-	private int eventSize;
-	private String eventKind;
-	private Timestamp startDate;
-	private Timestamp finishDate;
-	private Timestamp reserDate;
+	private int eventId;  //인덱스 
+	private String eventName; //이벤트명
+	private String adminId; //시행 관리자id
+	private int productNum; //이벤트 제품 넘버
+	private int eventSize;  //이벤트 수치
+	private String eventKind; //이벤트 종류
+	private Timestamp startDate; //시행일
+	private Timestamp finishDate; //종료일
+	private Timestamp reserDate; // 예약일
 	
 	//getter/setter
 	public int getEventId() {

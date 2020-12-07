@@ -94,19 +94,19 @@
                                                                 <!-- Nav tabs -->
                                                                 <ul class="nav nav-tabs md-tabs " role="tablist">
                                                                     <li class="nav-item">
-                                                                        <a class="nav-link active" data-toggle="tab" href="#home7" role="tab"><i class="icofont icofont-home"></i>매출 통계</a>
+                                                                        <a class="nav-link active" data-toggle="tab" href="#home7" role="tab"><i class="icofont icofont-money"></i>매출 통계</a>
                                                                         <div class="slide"></div>
                                                                     </li>
                                                                     <li class="nav-item">
-                                                                        <a class="nav-link" data-toggle="tab" href="#profile7" role="tab"><i class="icofont icofont-ui-user "></i>이용권 통계</a>
+                                                                        <a class="nav-link" data-toggle="tab" href="#profile7" role="tab"><i class="icofont icofont-ticket "></i>이용권 통계</a>
                                                                         <div class="slide"></div>
                                                                     </li>
                                                                     <li class="nav-item">
-                                                                        <a class="nav-link" data-toggle="tab" href="#messages7" role="tab"><i class="icofont icofont-ui-message"></i>검색 통계</a>
+                                                                        <a class="nav-link" data-toggle="tab" href="#messages7" role="tab"><i class="icofont icofont-search"></i>검색 통계</a>
                                                                         <div class="slide"></div>
                                                                     </li>
                                                                     <li class="nav-item">
-                                                                        <a class="nav-link" data-toggle="tab" href="#settings7" role="tab"><i class="icofont icofont-ui-settings"></i>유저 통계</a>
+                                                                        <a class="nav-link" data-toggle="tab" href="#settings7" role="tab"><i class="icofont icofont-user"></i>유저 통계</a>
                                                                         <div class="slide"></div>
                                                                     </li>
                                                                 </ul>
