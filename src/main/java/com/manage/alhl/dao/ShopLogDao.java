@@ -22,6 +22,10 @@ public class ShopLogDao {
 	public List<ShopLogDTO> shopSelect_user(UserDTO dto) {
 		return mybatis.selectList("shoplogMapper.shoplogSelect_user", dto);
 	}
+	public List<ShopLogDTO> shoplogSelect_product(Shop_ProductDTO dto) {
+		return mybatis.selectList("shoplogMapper.shoplogSelect_product", dto);
+	}
+	
 	public int shoplogInsert(ShopLogDTO dto) {
 		return mybatis.update("shoplogMapper.shoplogInsert", dto);
 	}

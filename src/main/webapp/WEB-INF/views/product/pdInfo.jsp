@@ -98,27 +98,27 @@
 												<div class="row ">
 													<div class="form-group">
 														<div class="col-lg-12">
-															<label class="label label-warning">상품번호</label><label>3</label>
+															<label class="label label-warning">상품번호</label><label>${shop_product.productNum}</label>
 														</div>
 													</div>
 													<div class="form-group">
 														<div class="col-lg-12">
-															<label class="label label-warning">상품명</label><label>꿀곰이</label>
+															<label class="label label-warning">상품명</label><label>${shop_product.productName}</label>
 														</div>
 													</div>
 													<div class="form-group">
 														<div class="col-lg-12">
-															<label class="label label-warning">혜택</label><label>300 회</label>
+															<label class="label label-warning">혜택</label><label>${shop_product.benefit} 회</label>
 														</div>
 													</div>
 													<div class="form-group">
 														<div class="col-lg-12">
-															<label class="label label-warning">가격</label><label>1,000 원</label>
+															<label class="label label-warning">가격</label><label>${shop_product.price} 원</label>
 														</div>
 													</div>
 													<div class="form-group">
 														<div class="col-lg-12">
-															<label class="label label-warning">업데이트일</label><label>2020-11-11</label>
+															<label class="label label-warning">출시일</label><label>${shop_product.createDate} </label>
 														</div>
 													</div>
 
@@ -157,58 +157,61 @@
 																<div class="table-responsive">
 																	<table class="table">
 																		<thead>
-																			<tr>
-																				<th>#</th>
-																				<th>정상가</th>
-																				<th>할인율</th>
-																				<th>결제액</th>
-																				<th>사용자</th>
-																				<th>결제일</th>
-																			</tr>
-																		</thead>
-																		<tbody>
-																			<tr>
-																				<th>1</th>
-																				<td>2000</td>
-																				<td>10</td>
-																				<td>900</td>
-																				<td>rhkrwldyd</td>
-																				<td>2020-11-11</td>
-																			</tr>
-																			<tr>
-																				<th>2</th>
-																				<td>1000</td>
-																				<td>10</td>
-																				<td>900</td>
-																				<td>rhkrwldyd</td>
-																				<td>2020-11-11</td>
-																			</tr>
-																			<tr>
-																				<th>3</th>
-																				<td>2000</td>
-																				<td>10</td>
-																				<td>900</td>
-																				<td>rhkrwldyd</td>
-																				<td>2020-11-11</td>
-																			</tr>
-																			<tr>
-																				<th>4</th>
-																				<td>2000</td>
-																				<td>10</td>
-																				<td>900</td>
-																				<td>rhkrwldyd</td>
-																				<td>2020-11-11</td>
-																			</tr>
-																			<tr>
-																				<th>5</th>
-																				<td>5000</td>
-																				<td>10</td>
-																				<td>900</td>
-																				<td>rhkrwldyd</td>
-																				<td>2020-11-11</td>
-																			</tr>
-																		</tbody>
+																		<tr>
+																			<th>#</th>
+																			<th>사용자id</th>
+																			<th>결제액</th>
+																			<th>구매이용권</th>
+																			<th>날짜</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<c:forEach items="${list}" var="log">
+																		<tr>
+																			<th>${log.sLogId}</th>
+																			<td>${log.userId}</td>
+																			<td>${log.payment}</td>
+																			<td>${log.productNum}</td>
+																			<td>${log.logDate}</td>
+																		</tr>
+																		</c:forEach>
+																	</tbody>
+																	
 																	</table>
+																	<table class="table" >
+																	<tr align="center">
+																		<td>
+																			<div class="btn-group" role="group"
+																				aria-label="Basic example">
+																				<c:if test="${1 != listPageNum}">
+																					<button type="button"
+																						class="btn btn-primary btn-sm"
+																						onclick="javascript:location.href='product_info.do?pageNum=1&&productNum=${shop_product.productNum}';">처음</button>
+																					<button type="button"
+																						class="btn btn-primary btn-sm"
+																						onclick="javascript:location.href='product_info.do?pageNum=${listPageNum-1}&&productNum=${shop_product.productNum}';">이전</button>
+																				</c:if>
+																				<c:forEach items="${listPageNumList}" var="page">
+																					<button type="button"
+																						class="btn btn-outline-primary btn-sm"
+																						onclick="javascript:location.href='product_info.do?pageNum=${page}&&productNum=${shop_product.productNum}';">
+																						${page}</button>
+
+																				</c:forEach>
+																				<c:if
+																					test="${listPageNumList_lastNum != listPageNum}">
+																					<button type="button"
+																						class="btn btn-primary btn-sm"
+																						onclick="javascript:location.href='product_info.do?pageNum=${listPageNum+1}&&productNum=${shop_product.productNum}';">다음</button>
+																					<button type="button"
+																						class="btn btn-primary btn-sm"
+																						onclick="javascript:location.href='product_info.do?pageNum=${listPageNumList_lastNum}&&productNum=${shop_product.productNum}';">마지막</button>
+																				</c:if>
+																			</div>
+																		</td>
+																		<td></td>
+																	</tr>
+																</table>
 																</div>
 															</div>
 														</div>
@@ -233,51 +236,10 @@
 	<!-------------------- Modal -------------------->
 	
 	<!-- 상품추가 모달창 -->
-	<div class="modal fade" id="btnProductAdd" tabindex="-1"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">상품 추가</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">상품명</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">혜택</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">가격</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control">
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-warning"
-						data-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-success">추가</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 상품수정 모달창 -->
 	<div class="modal fade" id="btnProductEdit" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
-			<div class="modal-content">
+			<form class="modal-content" action="update_product.ing" method="post">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">상품 수정</h5>
 					<button type="button" class="close" data-dismiss="modal"
@@ -286,32 +248,32 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					
+					<input name="productNum" type="hidden" class="form-control" value="${shop_product.productNum}">
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">상품명</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control">
+							<input name="productName" type="text" class="form-control" value="${shop_product.productName}">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">혜택</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control">
+							<input name="benefit" type="text" class="form-control" value="${shop_product.benefit}">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">가격</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control">
+							<input name="price" type="text" class="form-control" value="${shop_product.price}">
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-warning"
 						data-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-success">수정</button>
+					<button type="submit" class="btn btn-success">수정</button>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 	<!------------ 자바스크립트 임포트 ------------>
@@ -322,19 +284,23 @@
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 	<script>
+		var month_all= new Array();	   
+		<c:forEach items="${shop_product_stat}" var="mon"> 
+			month_all.push(${mon.payment});
+		</c:forEach>
 		Highcharts.chart('container1', {
 		
 		    title: {
-		        text: '[꿀곰이] 매출현황 '
+		        text: '[${shop_product.productName}] 매출현황 '
 		    },
 		
 		    subtitle: {
-		        text: '2020/11/05에 업데이트 되었습니다.'
+		        text: '연간 매출'
 		    },
 		
 		    yAxis: {
 		        title: {
-		            text: 'Won'
+		            text: '원'
 		        }
 		    },
 		
@@ -360,8 +326,8 @@
 		    },
 		
 		    series: [{
-		        name: '꿀곰이',
-		        data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+		        name: '${shop_product.productName}',
+		        data: month_all
 		    }],
 		
 		    responsive: {

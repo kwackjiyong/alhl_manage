@@ -60,7 +60,6 @@
 
 					<!------------ 사이드바 임포트 ------------>
 					<c:import url="../import/sidebar.jsp" />
-					<c:import url="../import/modal.jsp" />
 					<!------------ 사이드바 임포트 END ------------>
 
 					<div class="pcoded-content">
@@ -108,22 +107,18 @@
 																			<th>가격</th>
 																			<th>생성일</th>
 																			<th>사용여부</th>
-																			<th>수정</th>
 																		</tr>
 																	</thead>
 																	<tbody>
 																	
 																		<c:forEach items="${product_list}" var="pd_list">
-																			<tr>
-																				<td scope="row">${pd_list.spId}</td>
-																				<td>${pd_list.productName }</td>
-																				<td>${pd_list.benefit }</td>
-																				<td>${pd_list.price }</td>
-																				<td>${pd_list.createDate }</td>
-																				<td><button class="btn btn-danger btn-round btn-sm">사용중지</button></td>
-																				<td><button name = "spModify" class="btn btn-success btn-round btn-sm" data-toggle="modal" data-target="#btnProductEdit" value = "${pd_list.spId }">수정</button>
-																				<button name = "spDelete"class="btn btn-warning btn-round btn-sm" data-toggle="modal" data-target="#btnProductEdit">삭제</button>
-																				</td>
+																			<tr onclick="javascript:location.href='product_info.do?productNum=${pd_list.productNum}'">
+																				<th>${pd_list.productNum}</th>
+																				<td>${pd_list.productName}</td>
+																				<td>${pd_list.benefit}</td>
+																				<td>${pd_list.price}</td>
+																				<td>${pd_list.createDate}</td>
+																				<td>사용중</td>
 																			</tr>
 																		</c:forEach>
 																	</tbody>
@@ -147,12 +142,12 @@
 	</div>
 	
 	<!-------------------- Modal -------------------->
-<!-- 	
+<
 	상품추가 모달창
 	<div class="modal fade" id="btnProductAdd" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
-			<div class="modal-content">
+			<form class="modal-content" action="insert_product.ing" method="post">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">상품 추가</h5>
 					<button type="button" class="close" data-dismiss="modal"
@@ -165,30 +160,30 @@
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">상품명</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control">
+							<input name="productNum" type="text" class="form-control">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">혜택</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control">
+							<input name="benefit" type="text" class="form-control">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">가격</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control">
+							<input name="price" type="text" class="form-control">
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-warning"
 						data-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-success">추가</button>
+					<button type="submit" class="btn btn-success">추가</button>
 				</div>
-			</div>
+			</form>
 		</div>
-	</div> -->
+	</div>
 	
 	<!------------ 자바스크립트 임포트 ------------>
 	<c:import url="../import/javascript.jsp" />

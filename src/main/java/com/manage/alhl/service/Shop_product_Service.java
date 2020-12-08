@@ -17,4 +17,16 @@ public class Shop_product_Service {
 	public List<Shop_ProductDTO> show_list(){
 		return dao.show_list();
 	}
+	public Shop_ProductDTO show_product_info(Shop_ProductDTO dto){
+		return dao.show_product_info(dto);
+	}
+	public int insert_product(Shop_ProductDTO dto){
+		return dao.insert_product(dto);
+	}
+	public int update_product(Shop_ProductDTO dto){
+		return dao.update_product(dto);
+	}
+	public int next_num(){
+		return dao.next_num();
+	}
 }

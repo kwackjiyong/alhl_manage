@@ -5,24 +5,32 @@
 <!-- sql문 작성 -->
 <mapper namespace="shop_product_mapper">
 
-	<select id="SelectAll" parameterType ="Shop_ProductDTO" resultType="Shop_ProductDTO">
+	<select id="SelectAll" resultType="Shop_ProductDTO">
 		SELECT * FROM shop_product
 	</select>
 	
-	<insert id = "spInsert" parameterType="Shop_ProductDTO">
+	<select id="show_product_info" parameterType ="Shop_ProductDTO" resultType="Shop_ProductDTO">
+		SELECT * FROM shop_product WHERE productNum=#{productNum}
+	</select>
+	<select id="next_num" resultType="int">
+		SELECT MAX(productNum)+1 FROM shop_product
+	</select>
+	<insert id = "insert_product" parameterType="Shop_ProductDTO">
 		INSERT INTO shop_product
 		(productNum,productName,benefit,price,createDate)
 		VALUES
 		(#{productNum}, #{productName},#{benefit},#{price},#{createDate})
 	</insert>
 	
-	<update id="spUpdate" parameterType ="Shop_ProductDTO">
-		UPDATE COMMENT SET 
-		rContent=#{rContent} where productNum=#{productNum}
+	<update id="update_product" parameterType ="Shop_ProductDTO">
+		UPDATE shop_product 
+		SET 
+		productName=#{productName},benefit=#{benefit},price=#{price}
+		where productNum=#{productNum}
 	</update>
 
-	<delete id="spDelete">
-		delete from comment where productNum=#{productNum}
+	<delete id="delete_product" parameterType ="Shop_ProductDTO">
+		delete from shop_product where productNum=#{productNum}
 	</delete>
 
 </mapper>

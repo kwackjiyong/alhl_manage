@@ -14,6 +14,11 @@
 		SELECT * FROM Shop_Log WHERE userId = #{userId}
 	</select>
 	
+	<!-- 상품별 구매내역 -->
+	<select id="shoplogSelect_product" parameterType="Shop_ProductDTO" resultType="ShopLogDTO">
+		SELECT * FROM Shop_Log WHERE productNum = #{productNum}
+	</select>
+	
 	<!-- 구매이력 기록 -->
 	<insert id="shoplogInsert" parameterType="ShopLogDTO">
 		INSERT INTO Shop_Log
