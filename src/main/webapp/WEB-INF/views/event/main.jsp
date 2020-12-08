@@ -73,15 +73,15 @@
 																			<th>혜택대상</th>
 																			<th>정량</th>
 																			<th>이벤트 종류</th>
-																			<th>시작일</th>
-																			<th>종료일</th>
-																			<th>예약일</th>
+																			<th>이벤트 시작일</th>
+																			<th>이벤트 종료일</th>
+																			<th>예약한 날짜</th>
 																			<th></th>
 																		</tr>
 																	</thead>
 																	<tbody>
 																		<c:forEach items="${eventlist}" var="list">
-																		<tr data-toggle="modal" data-target="#btnRow">
+																		<tr data-toggle="modal" data-target="#btnRow" onclick="javascript:updateInfo('${list.eventId}','${list.eventName}','${list.eventSize}','${list.eventKind}','${list.productNum}','${list.startDate}','${list.finishDate}');">
 																			<th>${list.eventId}</th>
 																			<td>${list.eventName}</td>
 																			<td>${list.adminId}</td>
@@ -91,7 +91,6 @@
 																			<td>${list.startDate}</td>
 																			<td>${list.finishDate}</td>
 																			<td>${list.reserDate}</td>
-																			<td><button class="btn btn-danger btn-round">중지</button></td>
 																		</tr>
 																		</c:forEach>
 																	</tbody>
@@ -184,7 +183,7 @@
 	<div class="modal fade" id="btnRow" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
-			<div class="modal-content">
+			<form class="modal-content" action="eventUpdate.ing" method="post">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">이벤트 수정</h5>
 					<button type="button" class="close" data-dismiss="modal"
@@ -193,40 +192,57 @@
 					</button>
 				</div>
 				<div class="modal-body">
+					<input name="eventId" id="eventId" type="hidden" class="form-control">
 					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">이벤트 수정</label>
+						<label class="col-sm-4 col-form-label">이벤트 종류</label>
 						<div class="col-sm-8">
-							<select name="cars" id="cars" class = "form-control">
-									<option value="volvo">횟수혜택</option>
-									<option value="saab">할인 %</option>
+							<select name="eventKind" id="eventKind" class = "form-control">
+									<option value="횟수">횟수혜택</option>
+									<option value="할인">할인 %</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label">이벤트명</label>
+						<div class="col-sm-8">
+							<input name="eventName" id="eventName" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label">혜택 제품</label>
+						<div class="col-sm-8">
+							<select name="productNum" id="productNum"  class = "form-control">
+									<option value="1">곰곰이</option>
+									<option value="2">꿀곰이</option>
+									<option value="3">불곰이</option>
 							</select>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-4 col-form-label">수량</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control">
+							<input name="eventSize" id="eventSize" type="text" class="form-control">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">이벤트 시작</label>
+						<label class="col-sm-4 col-form-label">이벤트 시작일</label>
 						<div class="col-sm-8">
-							<input type="date" class="form-control">
+							<input name="startTime" id="startTime" type="date" class="form-control">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-4 col-form-label">이벤트 종료</label>
+						<label class="col-sm-4 col-form-label">이벤트 종료일</label>
 						<div class="col-sm-8">
-							<input type="date" class="form-control">
+							<input name="finishTime" id="finishTime" type="date" class="form-control">
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-warning"
 						data-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-success">추가</button>
+					<button type="submit" class="btn btn-success">수정</button>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 	
@@ -235,5 +251,26 @@
 	<!------------ 자바스크립트 임포트 ------------>
 	<c:import url="../import/javascript.jsp" />
 	<!------------ Javascript import END ------------>
+	<script type="text/javascript">
+	function updateInfo(eventId,eventName,eventSize,eventKind,productNum,startTime,finishTime){
+		document.getElementById("eventName").value= eventName;
+		document.getElementById("eventId").value= eventId;
+		document.getElementById("eventSize").value= eventSize;
+		//val startDate = new Date();
+		//console.log(startDate.getDate());
+		//val finishDate = new Date(finishTime);
+		//console.log(startDate);
+		document.getElementById("startTime").value = startTime.substr(0, 10)
+		document.getElementById("finishTime").value = finishTime.substr(0, 10)
+		if(eventKind == "할인"){
+			document.getElementById("eventKind").options[1].selected = true;
+		}else{
+			document.getElementById("eventKind").options[0].selected = true;
+		}
+		document.getElementById("productNum").options[parseInt(productNum)-1].selected = true;
+		
+	}
+	
+	</script>
 </body>
 </html>

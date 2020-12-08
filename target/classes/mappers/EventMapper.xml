@@ -16,10 +16,10 @@
 		(#{eventName},#{adminId},#{productNum},#{eventSize},#{eventKind},#{startDate},#{finishDate},#{reserDate})
 	</insert>
 	
-	<!-- 이벤트 중지 -->
+	<!-- 이벤트 수정 -->
 	<update id="eventUpdate_finish" parameterType="EventDTO">
 		UPDATE event 
-		SET finishDate=#{finishDate}
+		SET  eventName=#{eventName},productNum=#{productNum},eventSize=#{eventSize},eventKind=#{eventKind},startDate=#{startDate},finishDate=#{finishDate}
 		WHERE eventId=#{eventId}
 	</update>
 </mapper>

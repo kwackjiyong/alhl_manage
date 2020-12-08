@@ -50,7 +50,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "index";
+		return "redirect:index.do";
 	}
 	@RequestMapping(value = "index.do", method = RequestMethod.GET)
 	public String home2(Locale locale, Model model) {
