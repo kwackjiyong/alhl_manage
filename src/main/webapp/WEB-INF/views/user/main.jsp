@@ -100,11 +100,16 @@
 																				<td>${user.creatTime}</td>
 																			</tr>
 																		</c:forEach>
+																		<c:if test="${empty list}">
+																			<tr>
+																			<td colspan="9" align="center" >검색된 사용자가 없습니다.</td>
+																			</tr>
+																		</c:if>
 																	</tbody>
 																</table>
 
 																<table class="table">
-																	<tr>
+																	<tr align="center">
 																		<td></td>
 																		<td>
 																			<div class="btn-group" role="group"
