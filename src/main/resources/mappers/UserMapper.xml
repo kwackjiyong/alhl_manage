@@ -5,7 +5,7 @@
 <!-- sql문 작성 -->
 <mapper namespace="userMapper">
 	<select id="userSelectALL" resultType="UserDTO">
-		SELECT * FROM USERDATA order by creatTime desc
+		SELECT * FROM userdata order by creatTime desc
 	</select>
 	<!--연간 사용자 통계 _ 연령별 _ 월별 -->
 	<select id="userSelect_month_age" parameterType="int" resultType="UserDTO">
@@ -21,15 +21,15 @@
 	
 	
 	<select resultType="UserDTO" parameterType="UserDTO"
-		id="userSelectAll">SELECT * FROM USERDATA</select>
+		id="userSelectAll">SELECT * FROM userdata</select>
 	
 	<select resultType="int"
-		id="userSelectToday">SELECT count(userId) FROM USERDATA WHERE TO_DAYS(creatTime) = TO_DAYS(SYSDATE())</select>
+		id="userSelectToday">SELECT count(userId) FROM userdata WHERE TO_DAYS(creatTime) = TO_DAYS(SYSDATE())</select>
 	
-	<select resultType="UserDTO" parameterType="UserDTO" id="userSelectOne">SELECT * FROM USERDATA WHERE userId=#{userId}</select>
+	<select resultType="UserDTO" parameterType="UserDTO" id="userSelectOne">SELECT * FROM userdata WHERE userId=#{userId}</select>
 	
 	<select id="userSelectIf"  resultType="UserDTO" parameterType="UserDTO">
-	SELECT * FROM USERDATA
+	SELECT * FROM userdata
 	<if test="userId != ''">
 	WHERE userId like CONCAT('%',#{userId},'%') 
 	OR userName like CONCAT('%',#{userId},'%')
@@ -37,7 +37,7 @@
 	</select>
 	
 	<insert id="userInsert" parameterType="UserDTO" >
-		INSERT INTO USERDATA
+		INSERT INTO userdata
 		(userId,userName,userPassword,userBirth,creatTime,userGender,userEmail,userEmailHash,userEmailCertified)
 		VALUES
 		(#{userId}, #{userName},
@@ -45,29 +45,29 @@
 	</insert>
 
 	<update id="userModify" parameterType="UserDTO">
-		UPDATE USERDATA SET
+		UPDATE userdata SET
 		userName=#{userName},userBirth=#{userBirth},
 		userGender=#{userGender},userEmail=#{userEmail}
 		WHERE userId=#{userId}
 	</update>
 	
 	<update id="userEmailCheck" parameterType="UserDTO">
-		UPDATE USERDATA SET
+		UPDATE userdata SET
 		userEmailCertified=1
 		WHERE userId=#{userId}
 	</update>
 	
 	<update id="userUpdate_Cash" parameterType="UserDTO">
-		UPDATE USERDATA SET
+		UPDATE userdata SET
 		cash=#{cash}
 		WHERE userId=#{userId}
 	</update>
 	<delete id="userDelete" parameterType="UserDTO">
-		DELETE FROM USERDATA
+		DELETE FROM userdata
 		WHERE userId=#{userId}
 	</delete>
 	<update id="userModify_remark" parameterType="UserDTO">
-		UPDATE USERDATA SET
+		UPDATE userdata SET
 		userRemark=#{userRemark}
 		WHERE userId=#{userId}
 	</update>

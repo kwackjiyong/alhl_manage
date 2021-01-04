@@ -18,7 +18,7 @@
 		FROM searchlog
 		WHERE YEAR(srchTime) = YEAR(SYSDATE())
 		<if test="years != 0">
-		AND	userId in (SELECT userId FROM USERDATA WHERE   CONVERT ( ((YEAR(SYSDATE())-YEAR(userBirth))/10) ,  SIGNED INTEGER )=#{years} )
+		AND	userId in (SELECT userId FROM userdata WHERE   CONVERT ( ((YEAR(SYSDATE())-YEAR(userBirth))/10) ,  SIGNED INTEGER )=#{years} )
 		</if>
 		GROUP BY DATE_FORMAT(srchTime,'%m')
 	</select>
@@ -59,7 +59,7 @@
 		FROM searchlog
 		where userId in 
 		(SELECT userId
-		FROM USERDATA 
+		FROM userdata 
 		<![CDATA[
 		WHERE userBirth < #{userBirth} AND userBirth > #{creatTime}
 		]]>)
