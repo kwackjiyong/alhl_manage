@@ -5,45 +5,45 @@
 <!-- sql문 작성 -->
 <mapper namespace="shopMapper">
 	<!-- 사용자의 이용권 정보 검색 -->
-	<select id="shopSelectOne_user" parameterType="UserDTO" resultType="ShopDTO">
-		SELECT * FROM SHOP WHERE userId = #{userId}
+	<select id="shopSelectOne_user" parameterType="UserDTO" resultType="shopDTO">
+		SELECT * FROM shop WHERE userId = #{userId}
 	</select>
 	
 	<!-- 사용자 초기 이용권 정보 등록 -->
-	<insert id="shopInsert_user" parameterType="ShopDTO">
-		INSERT INTO SHOP
+	<insert id="shopInsert_user" parameterType="shopDTO">
+		INSERT INTO shop
 		(userId,productNum,reCount)
 		VALUES
 		(#{userId}, #{productNum},#{reCount})
 	</insert>
 	
 	<!-- 사용자의 이용권 추가/변경 -->
-	<update id="shopUpdate_outTime" parameterType="ShopDTO">
-		UPDATE SHOP 
+	<update id="shopUpdate_outTime" parameterType="shopDTO">
+		UPDATE shop 
 		SET productNum=#{productNum} ,checkOutTime=#{checkOutTime},reCount=#{reCount}
 		WHERE userId=#{userId}
 	</update>
 	<!-- 사용자의 이용권 혜택 리셋 -->
-	<update id="shopUpdate_reCount" parameterType="ShopDTO">
-		UPDATE SHOP 
+	<update id="shopUpdate_reCount" parameterType="shopDTO">
+		UPDATE shop 
 		SET reCount=#{reCount}
 		WHERE userId = #{userId}
 	</update>
 	
 	<!-- 사용권 정보 목록 -->
-	<select id="shopProduct_info" resultType="Shop_ProductDTO">
+	<select id="shopProduct_info" resultType="shop_ProductDTO">
 		SELECT * FROM shop_product
 	</select>
 	
 	<!-- 사용자의 이용권 checkOuttime만 변경 -->
-	<update id="shopUpdate_time" parameterType="ShopDTO">
-		UPDATE SHOP 
+	<update id="shopUpdate_time" parameterType="shopDTO">
+		UPDATE shop 
 		SET checkOutTime=#{checkOutTime}
 		WHERE userId=#{userId}
 	</update>
 	<!-- 사용자의 이용권 productNum만 변경 -->
-	<update id="shopUpdate_product" parameterType="ShopDTO">
-		UPDATE SHOP 
+	<update id="shopUpdate_product" parameterType="shopDTO">
+		UPDATE shop 
 		SET productNum=#{productNum}
 		WHERE userId=#{userId}
 	</update>
