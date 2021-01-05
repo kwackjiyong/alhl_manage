@@ -6,22 +6,22 @@
 <mapper namespace="shoplogMapper">
 	<!-- 전체 구매내역 -->
 	<select id="shoplogSelect" resultType="ShopLogDTO">
-		SELECT * FROM Shop_Log order by sLogId desc;
+		SELECT * FROM shop_log order by sLogId desc;
 	</select>
 
 	<!-- 사용자 구매내역 -->
 	<select id="shoplogSelect_user" parameterType="UserDTO" resultType="ShopLogDTO">
-		SELECT * FROM Shop_Log WHERE userId = #{userId}
+		SELECT * FROM shop_log WHERE userId = #{userId}
 	</select>
 	
 	<!-- 상품별 구매내역 -->
 	<select id="shoplogSelect_product" parameterType="Shop_ProductDTO" resultType="ShopLogDTO">
-		SELECT * FROM Shop_Log WHERE productNum = #{productNum}
+		SELECT * FROM shop_log WHERE productNum = #{productNum}
 	</select>
 	
 	<!-- 구매이력 기록 -->
 	<insert id="shoplogInsert" parameterType="ShopLogDTO">
-		INSERT INTO Shop_Log
+		INSERT INTO shop_log
 		(userId,productNum,reCount)
 		VALUES
 		(#{userId}, #{productNum},#{reCount})

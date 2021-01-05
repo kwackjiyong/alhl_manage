@@ -7,17 +7,17 @@
 
 	<!-- 게시판 전체 불러옴 -->
 	<select id = "SelectAll" resultType="NoticeDTO">
-		SELECT postId,userId,title,contents,viewcnt,(SELECT sContents FROM SERVICEID WHERE sId = ps.serviceId) as sContents,creatTime FROM POST as ps
+		SELECT postId,userId,title,contents,viewcnt,(SELECT sContents FROM SERVICEID WHERE sId = ps.serviceId) as sContents,creatTime FROM post as ps
 	</select>
 	
 	<!-- 게시판 하나 불러옴 상세보기 -->
 	<select id = "noticeSelectOne" resultType="NoticeDTO" parameterType ="NoticeDTO">
-		SELECT * FROM POST where postId=#{postId}
+		SELECT * FROM post where postId=#{postId}
 	</select>
 	
 	<!-- 글작성 -->
 	<insert parameterType ="NoticeDTO" id="noticeCreate">
-		INSERT INTO POST
+		INSERT INTO post
 		(postId,userId,title,contents,viewcnt,serviceId,creatTime)
 		VALUES
 		(#{postId}, #{userId}, #{title}, #{contents}, #{viewcnt}, #{serviceId}, #{creatTime}) 
@@ -25,20 +25,20 @@
 	
 	<!-- 글수정 -->
 	<update parameterType = "NoticeDTO" id="noticeUpdate">
-		UPDATE POST SET
+		UPDATE post SET
 		title=#{title},contents=#{contents},serviceId=#{serviceId}
 		WHERE postId=#{postId}
 	</update>
 	
 	<!-- 글삭제 -->
 	<insert id="noticeDelete">
-		DELETE FROM POST
-		WHERE POSTID=#{POSTID}
+		DELETE FROM post
+		WHERE postID=#{postID}
 	</insert>
 	
 	<!-- 조회수 증가처리 -->
 	<update id="increaseViewcnt" parameterType = "NoticeDTO">
-		UPDATE POST SET
+		UPDATE post SET
 		VIEWCNT = VIEWCNT+1
 		WHERE postId=#{postId}
 	</update>

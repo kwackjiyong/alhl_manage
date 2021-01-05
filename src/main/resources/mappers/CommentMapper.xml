@@ -5,7 +5,7 @@
 <!-- sql문 작성 -->
 <mapper namespace="commentMapper">
 
-	<insert id="cInsert" parameterType ="CommentDTO">
+	<insert id="cInsert" parameterType ="commentDTO">
 		<!-- 댓글을 추가 -->
 		INSERT INTO comment 
 		(postId, rContent,userId,userName,reg_date,upreg_date)
@@ -14,7 +14,7 @@
 	</insert>
 
 
-	<select id="listReply" resultType="CommentDTO">
+	<select id="listReply" resultType="commentDTO">
 		<!-- 댓글의 작성자와 회원의 아이디가 같고, 글번호가 같을 경우에 댓글 리스트를 내림차순으로 검색함 -->
 		select cId, c.postId, c.userId, c.reg_date, c.rContent
 		from comment c
@@ -23,9 +23,9 @@
 	</select>
 
 
-	<update id="cUpdate" parameterType ="CommentDTO">
+	<update id="cUpdate" parameterType ="commentDTO">
 		<!-- 댓글의 번호와 회원의 아이디가 모두다 같을경우에만 수정할 수 있도록 쿼리를 설정 -->
-		UPDATE COMMENT SET 
+		UPDATE comment SET 
 		rContent=#{rContent} where cId=#{cId}
 	</update>
 
