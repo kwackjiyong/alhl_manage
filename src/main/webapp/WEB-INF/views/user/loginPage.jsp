@@ -42,7 +42,7 @@
 								</div>
 								<hr>
 								<div class="input-group">
-									<input type="text" class="form-control" placeholder="Your ID" name = "userId">
+									<input type="text" class="form-control" placeholder="Your ID" name = "userId" id="userId">
 									<span class="md-line"></span>
 								</div>
 								<div class="input-group">
@@ -72,5 +72,11 @@
 	<!------------ 자바스크립트 임포트 ------------>
 	<c:import url="../import/javascript.jsp" />
 	<!------------ Javascript END ------------>
+	<script type="text/javascript">
+		$(document).ready() =$(function(){
+			$('#userId').focus();
+			$('#userId').blur();
+		})
+	</script>
 </body>
 </html>
