@@ -75,6 +75,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#userId').focus();
+			$('#userId').click();
 		})
 	</script>
 </body>
