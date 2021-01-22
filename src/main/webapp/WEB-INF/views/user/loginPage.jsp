@@ -73,9 +73,8 @@
 	<c:import url="../import/javascript.jsp" />
 	<!------------ Javascript END ------------>
 	<script type="text/javascript">
-		$(document).ready() =$(function(){
+		$(document).ready(function(){
 			$('#userId').focus();
-			$('#userId').blur();
 		})
 	</script>
 </body>
